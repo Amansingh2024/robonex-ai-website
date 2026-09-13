@@ -28,16 +28,97 @@
     </section>
 
     <section class="learning-tree" aria-labelledby="tree-title">
-      <div class="tree-root tree-root-line"><span>✦</span><div><small>ROBONEX LEARNING TREE</small><b class="tree-divider">—</b><strong id="tree-title">Young Innovator</strong></div></div>
-      <div class="tree-line"></div>
-      <div class="tree-grid">
-        <article id="robotics" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Robotics and electronics teaches students how machines sense the world, move safely, and respond through real circuits and controllers."><i title="Robotics and electronics">⚙</i><p>01 / FOUNDATION</p><h2>Robotics &amp; Electronics</h2><ul><li>Sensors &amp; actuators</li><li>DC, servo &amp; stepper motors</li><li>Motor drivers, LEDs &amp; displays</li><li>Arduino, ESP32 &amp; Raspberry Pi</li><li>Circuits &amp; breadboard prototyping</li></ul></article>
-        <article id="coding" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Programming gives students the instructions behind every invention, starting with visual blocks and growing into Python, C/C++, MicroPython, and Git."><i title="Programming and coding">⌘</i><p>02 / CREATE</p><h2>Programming &amp; Coding</h2><ul><li>Block coding, Scratch &amp; PictoBlox</li><li>Arduino IDE and C/C++ basics</li><li>Python &amp; MicroPython</li><li>VS Code and Git/GitHub</li><li>Logic, variables &amp; control flow</li></ul></article>
-        <article id="ai" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Artificial intelligence helps students train machines to find patterns, classify images, understand datasets, and make useful decisions with responsible automation."><i title="Artificial intelligence">◉</i><p>03 / THINK</p><h2>Artificial Intelligence</h2><ul><li>AI &amp; machine learning fundamentals</li><li>Datasets and model concepts</li><li>Image classification</li><li>Object and face detection</li><li>Pose, gesture &amp; AI automation</li></ul></article>
-        <article id="vision" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Computer vision turns camera feeds into information. Students build counters and recognition projects with image processing, tracking, Python, and OpenCV."><i title="Computer vision">◈</i><p>04 / SEE</p><h2>Computer Vision</h2><ul><li>Camera-based projects</li><li>Image processing with Python</li><li>Object tracking &amp; vision counter</li><li>Colour and shape recognition</li><li>OpenCV foundations</li></ul></article>
-        <article id="iot" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="IoT connects physical sensors to networks and dashboards. Students build smart-home, monitoring, and cloud-connected projects with ESP32, Wi-Fi, Bluetooth, and MQTT."><i title="IoT and smart automation">⌁</i><p>05 / CONNECT</p><h2>IoT &amp; Smart Automation</h2><ul><li>Wi-Fi, Bluetooth &amp; MQTT</li><li>ESP32 smart systems</li><li>Web dashboards &amp; cloud</li><li>Remote sensor monitoring</li><li>Smart-home automation</li></ul></article>
-        <article id="mechanical" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Mechanical design makes a robot physically work. Students design chassis, joints, gears, grippers, and prototypes using CAD, fabrication, and 3D printing."><i title="Mechanical design">⬡</i><p>06 / ENGINEER</p><h2>Mechanical Design</h2><ul><li>Chassis, wheels, gears &amp; bearings</li><li>Mechanical joints and grippers</li><li>CAD basics &amp; 3D printing</li><li>Prototype development</li><li>Fabrication and testing</li></ul></article>
-        <article id="advanced" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Advanced robotics brings all the branches together through autonomous navigation, AGV concepts, ROS 2, simulation, SLAM, and robot behaviors built from reusable components."><i title="Advanced robotics">⌬</i><p>07 / ADVANCE</p><h2>Advanced Robotics</h2><ul><li>Autonomous robots</li><li>Line following &amp; obstacle avoidance</li><li>AGV/AMR and navigation concepts</li><li>ROS 2 and robot simulation</li><li>SLAM, nodes, topics &amp; actions</li></ul></article>
+      <div class="tree-root tree-root-line"><span>✦</span><div><small>ROBONEX LEARNING TREE</small><b class="tree-divider">—</b><strong id="tree-title">Young Innovator Roadmap</strong></div></div>
+      
+      <div class="tree-timeline">
+        <div class="tree-timeline-track"></div>
+        <div class="tree-timeline-progress" id="tree-progress"></div>
+        
+        <div class="tree-grid">
+          <article id="robotics" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Robotics and electronics teaches students how machines sense the world, move safely, and respond through real circuits and controllers.">
+            <div class="tree-node"><span class="node-num">01</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">01 / FOUNDATION</span>
+              <i class="tree-card-icon" title="Robotics and electronics">⚙</i>
+            </div>
+            <h2>Robotics &amp; Electronics</h2>
+            <ul><li>Sensors &amp; actuators</li><li>DC, servo &amp; stepper motors</li><li>Motor drivers, LEDs &amp; displays</li><li>Arduino, ESP32 &amp; Raspberry Pi</li><li>Circuits &amp; breadboard prototyping</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="coding" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Programming gives students the instructions behind every invention, starting with visual blocks and growing into Python, C/C++, MicroPython, and Git.">
+            <div class="tree-node"><span class="node-num">02</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">02 / CREATE</span>
+              <i class="tree-card-icon" title="Programming and coding">⌘</i>
+            </div>
+            <h2>Programming &amp; Coding</h2>
+            <ul><li>Block coding, Scratch &amp; PictoBlox</li><li>Arduino IDE and C/C++ basics</li><li>Python &amp; MicroPython</li><li>VS Code and Git/GitHub</li><li>Logic, variables &amp; control flow</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="ai" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Artificial intelligence helps students train machines to find patterns, classify images, understand datasets, and make useful decisions with responsible automation.">
+            <div class="tree-node"><span class="node-num">03</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">03 / THINK</span>
+              <i class="tree-card-icon" title="Artificial intelligence">◉</i>
+            </div>
+            <h2>Artificial Intelligence</h2>
+            <ul><li>AI &amp; machine learning fundamentals</li><li>Datasets and model concepts</li><li>Image classification</li><li>Object and face detection</li><li>Pose, gesture &amp; AI automation</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="vision" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Computer vision turns camera feeds into information. Students build counters and recognition projects with image processing, tracking, Python, and OpenCV.">
+            <div class="tree-node"><span class="node-num">04</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">04 / SEE</span>
+              <i class="tree-card-icon" title="Computer vision">◈</i>
+            </div>
+            <h2>Computer Vision</h2>
+            <ul><li>Camera-based projects</li><li>Image processing with Python</li><li>Object tracking &amp; vision counter</li><li>Colour and shape recognition</li><li>OpenCV foundations</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="iot" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="IoT connects physical sensors to networks and dashboards. Students build smart-home, monitoring, and cloud-connected projects with ESP32, Wi-Fi, Bluetooth, and MQTT.">
+            <div class="tree-node"><span class="node-num">05</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">05 / CONNECT</span>
+              <i class="tree-card-icon" title="IoT and smart automation">⌁</i>
+            </div>
+            <h2>IoT &amp; Smart Automation</h2>
+            <ul><li>Wi-Fi, Bluetooth &amp; MQTT</li><li>ESP32 smart systems</li><li>Web dashboards &amp; cloud</li><li>Remote sensor monitoring</li><li>Smart-home automation</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="mechanical" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Mechanical design makes a robot physically work. Students design chassis, joints, gears, grippers, and prototypes using CAD, fabrication, and 3D printing.">
+            <div class="tree-node"><span class="node-num">06</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">06 / ENGINEER</span>
+              <i class="tree-card-icon" title="Mechanical design">⬡</i>
+            </div>
+            <h2>Mechanical Design</h2>
+            <ul><li>Chassis, wheels, gears &amp; bearings</li><li>Mechanical joints and grippers</li><li>CAD basics &amp; 3D printing</li><li>Prototype development</li><li>Fabrication and testing</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+
+          <article id="advanced" class="tree-card definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Advanced robotics brings all the branches together through autonomous navigation, AGV concepts, ROS 2, simulation, SLAM, and robot behaviors built from reusable components.">
+            <div class="tree-node"><span class="node-num">07</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">07 / ADVANCE</span>
+              <i class="tree-card-icon" title="Advanced robotics">⌬</i>
+            </div>
+            <h2>Advanced Robotics</h2>
+            <ul><li>Autonomous robots</li><li>Line following &amp; obstacle avoidance</li><li>AGV/AMR and navigation concepts</li><li>ROS 2 and robot simulation</li><li>SLAM, nodes, topics &amp; actions</li></ul>
+            <span class="tree-explore-btn">Explore Level <i>↗</i></span>
+          </article>
+        </div>
       </div>
     </section>
 

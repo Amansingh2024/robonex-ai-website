@@ -133,3 +133,64 @@ if (homePage && 'IntersectionObserver' in window) {
 	}, { threshold: 0.14 });
 	revealItems.forEach(item => revealObserver.observe(item));
 }
+
+// 1-Line Tree Timeline Scroll-Down Reveal ("jese slide kru vese vese niche aaye vo")
+const treeCards = document.querySelectorAll('.tree-card');
+if (treeCards.length && 'IntersectionObserver' in window) {
+	const treeObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('in-view');
+			}
+		});
+	}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+	treeCards.forEach(card => treeObserver.observe(card));
+} else {
+	treeCards.forEach(card => card.classList.add('in-view'));
+}
+
+// Top scroll progress bar & dynamic tree progress line
+const progressBar = document.createElement('div');
+progressBar.id = 'scroll-progress';
+document.body.prepend(progressBar);
+
+const updateScrollProgress = () => {
+	const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+	const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	if (height > 0) {
+		const scrolled = (winScroll / height) * 100;
+		progressBar.style.width = scrolled + '%';
+	}
+	
+	const treeProgress = document.getElementById('tree-progress');
+	const treeTimeline = document.querySelector('.tree-timeline');
+	if (treeProgress && treeTimeline) {
+		const rect = treeTimeline.getBoundingClientRect();
+		const viewH = window.innerHeight;
+		if (rect.top < viewH && rect.bottom > 0) {
+			const progress = Math.min(100, Math.max(0, ((viewH * 0.72 - rect.top) / rect.height) * 100));
+			treeProgress.style.height = progress + '%';
+		}
+	}
+};
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
+// Modern staggered reveal for projects and lab tools
+const modernCards = document.querySelectorAll('.all-projects article, .lab-list article');
+if (modernCards.length && 'IntersectionObserver' in window) {
+	const modernObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('in-view');
+				modernObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.1 });
+	modernCards.forEach((card, idx) => {
+		card.classList.add('modern-scroll-item');
+		card.style.setProperty('--card-delay', `${(idx % 4) * 90}ms`);
+		modernObserver.observe(card);
+	});
+}
+
