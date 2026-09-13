@@ -496,3 +496,420 @@
     font-size: 20px !important;
   }
 }
+
+
+/* ========================================================
+   MODERN 3D HOME PAGE UPGRADES
+   ======================================================== */
+.home-page {
+  background: radial-gradient(circle at 85% 8%, rgba(200, 150, 30, 0.14), transparent 40%),
+              radial-gradient(circle at 12% 45%, rgba(216, 255, 75, 0.09), transparent 35%),
+              radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.08), transparent 45%),
+              #0c100e !important;
+  color: #f3f5ee !important;
+  overflow-x: hidden;
+}
+
+/* 3D Rotating HUD Rings in Hero */
+.home-orbit-one {
+  position: absolute;
+  width: min(60vw, 750px);
+  height: min(60vw, 750px);
+  right: 5%;
+  top: 5%;
+  border: 1.5px dashed rgba(200, 150, 30, 0.45);
+  border-radius: 50%;
+  animation: orbit-rotate-3d 28s linear infinite;
+  transform: rotateX(60deg) rotateY(15deg);
+  pointer-events: none;
+}
+
+.home-orbit-two {
+  position: absolute;
+  width: min(40vw, 500px);
+  height: min(40vw, 500px);
+  right: 15%;
+  top: 20%;
+  border: 1.5px solid rgba(216, 255, 75, 0.35);
+  border-radius: 50%;
+  animation: orbit-rotate-3d-rev 20s linear infinite;
+  transform: rotateX(55deg) rotateY(-20deg);
+  pointer-events: none;
+}
+
+@keyframes orbit-rotate-3d {
+  0% { transform: rotateX(60deg) rotateY(15deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateY(15deg) rotateZ(360deg); }
+}
+
+@keyframes orbit-rotate-3d-rev {
+  0% { transform: rotateX(55deg) rotateY(-20deg) rotateZ(360deg); }
+  100% { transform: rotateX(55deg) rotateY(-20deg) rotateZ(0deg); }
+}
+
+/* 3D Modern Stats Showcase Strip */
+.home-stats-wrap {
+  margin: -35px auto 65px;
+  position: relative;
+  z-index: 10;
+  perspective: 1000px;
+}
+
+.home-stats-strip {
+  background: rgba(18, 25, 22, 0.88);
+  border: 1px solid rgba(200, 150, 30, 0.35);
+  border-radius: 22px;
+  padding: 24px 40px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 30px rgba(200, 150, 30, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home-stats-strip:hover {
+  transform: translateY(-4px) rotateX(2deg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(200, 150, 30, 0.25);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.stat-num {
+  font: 800 30px 'DM Mono', monospace;
+  background: linear-gradient(135deg, var(--dark-golden) 0%, #ffd700 65%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(200, 150, 30, 0.4);
+}
+
+.stat-label {
+  font: 600 11px 'DM Mono', monospace;
+  color: #a4aaa2;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 3D Modern Intro Section */
+.home-intro {
+  background: rgba(18, 24, 21, 0.72) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 28px !important;
+  padding: 55px 55px !important;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  margin-bottom: 75px !important;
+  perspective: 1000px;
+}
+
+.home-intro h2 {
+  color: #fff !important;
+  letter-spacing: -2.5px !important;
+}
+
+.home-intro h2 em {
+  color: var(--dark-golden) !important;
+  text-shadow: 0 0 22px rgba(200, 150, 30, 0.45) !important;
+  font-style: italic;
+}
+
+.home-intro > p {
+  color: #c8cec9 !important;
+  font-size: 15.5px !important;
+  line-height: 1.8 !important;
+}
+
+/* 3D Holographic Pillar Cards */
+.home-pillars {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  padding-bottom: 90px !important;
+  perspective: 1100px;
+}
+
+.home-pillar {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 310px !important;
+  padding: 32px 26px !important;
+  border-radius: 22px !important;
+  background: rgba(20, 27, 24, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transform-style: preserve-3d !important;
+  perspective: 1000px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease !important;
+}
+
+/* 3D Floating Icon */
+.home-pillar i {
+  display: grid !important;
+  place-items: center !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 16px !important;
+  font-style: normal !important;
+  font-size: 26px !important;
+  margin-bottom: 26px !important;
+  transform: translateZ(24px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.home-pillar:nth-child(1) i {
+  background: linear-gradient(135deg, var(--acid), #9fd32a) !important;
+  color: #0d1210 !important;
+  box-shadow: 0 0 25px rgba(216, 255, 75, 0.5) !important;
+}
+
+.home-pillar:nth-child(2) i {
+  background: linear-gradient(135deg, var(--purple), #a855f7) !important;
+  color: #0d1210 !important;
+  box-shadow: 0 0 25px rgba(205, 184, 255, 0.5) !important;
+}
+
+.home-pillar:nth-child(3) i {
+  background: linear-gradient(135deg, var(--orange), #f97316) !important;
+  color: #0d1210 !important;
+  box-shadow: 0 0 25px rgba(255, 182, 93, 0.5) !important;
+}
+
+.home-pillar:nth-child(4) i {
+  background: linear-gradient(135deg, #00f0ff, #06b6d4) !important;
+  color: #0d1210 !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5) !important;
+}
+
+.home-pillar small {
+  font: 700 10px 'DM Mono', monospace !important;
+  letter-spacing: 1px !important;
+  color: var(--dark-golden) !important;
+}
+
+.home-pillar h3 {
+  font-size: 26px !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1.2px !important;
+  margin: 12px 0 !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.home-pillar span {
+  margin-top: auto !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #d2d8d3 !important;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* 3D Hover on Pillars */
+.home-pillar:hover {
+  background: rgba(28, 38, 34, 0.96) !important;
+  transform: perspective(1000px) translateY(-10px) translateZ(16px) rotateX(3deg) !important;
+}
+
+.home-pillar:hover i {
+  transform: translateZ(32px) rotate(14deg) scale(1.1);
+}
+
+.home-pillar:nth-child(1):hover {
+  border-color: var(--acid) !important;
+  box-shadow: 0 28px 65px rgba(0,0,0,0.6), 0 0 35px rgba(216,255,75,0.25) !important;
+}
+
+.home-pillar:nth-child(2):hover {
+  border-color: var(--purple) !important;
+  box-shadow: 0 28px 65px rgba(0,0,0,0.6), 0 0 35px rgba(205,184,255,0.25) !important;
+}
+
+.home-pillar:nth-child(3):hover {
+  border-color: var(--orange) !important;
+  box-shadow: 0 28px 65px rgba(0,0,0,0.6), 0 0 35px rgba(255,182,93,0.25) !important;
+}
+
+.home-pillar:nth-child(4):hover {
+  border-color: #00f0ff !important;
+  box-shadow: 0 28px 65px rgba(0,0,0,0.6), 0 0 35px rgba(0,240,255,0.25) !important;
+}
+
+.home-pillar:hover span {
+  color: #fff !important;
+  transform: translateX(4px);
+}
+
+/* 3D Command Station Contact Section */
+.home-contact {
+  background: linear-gradient(135deg, rgba(22, 32, 28, 0.94) 0%, rgba(14, 20, 18, 0.96) 100%) !important;
+  border: 1px solid rgba(200, 150, 30, 0.45) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 40px rgba(200, 150, 30, 0.18) !important;
+  padding: 60px 65px !important;
+  color: #fff !important;
+  margin-bottom: 90px !important;
+  transform-style: preserve-3d !important;
+}
+
+.contact-title {
+  color: #fff !important;
+  letter-spacing: -2.5px !important;
+}
+
+.contact-title em {
+  color: var(--dark-golden) !important;
+  text-shadow: 0 0 22px rgba(200, 150, 30, 0.5) !important;
+  font-style: italic;
+}
+
+.contact-description {
+  color: #c9d0ca !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+.contact-call {
+  background: linear-gradient(135deg, var(--dark-golden), #e6ad27) !important;
+  color: #0d1210 !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 24px rgba(200, 150, 30, 0.45) !important;
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.contact-call:hover {
+  transform: translateY(-4px) scale(1.03) !important;
+  box-shadow: 0 14px 35px rgba(200, 150, 30, 0.6) !important;
+  color: #0d1210 !important;
+}
+
+.query-form {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 26px !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+}
+
+.query-form label span {
+  color: #a4aaa2 !important;
+  font: 600 11px 'DM Mono', monospace !important;
+}
+
+.query-form input,
+.query-form textarea {
+  background: rgba(14, 20, 18, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  padding: 13px 16px !important;
+  font-size: 13.5px !important;
+  transition: border-color 0.25s, box-shadow 0.25s !important;
+}
+
+.query-form input:focus,
+.query-form textarea:focus {
+  border-color: var(--dark-golden) !important;
+  box-shadow: 0 0 18px rgba(200, 150, 30, 0.4) !important;
+  outline: none !important;
+}
+
+.query-form button {
+  background: linear-gradient(135deg, var(--dark-golden), var(--acid)) !important;
+  color: #0d1210 !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 24px rgba(216, 255, 75, 0.3) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.query-form button:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 30px rgba(216, 255, 75, 0.5) !important;
+}
+
+.home-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #9ca3af !important;
+  padding: 36px 0 55px !important;
+}
+
+.home-footer .brand {
+  color: #fff !important;
+}
+
+/* Mobile Overrides for Modern 3D Home Elements */
+@media(max-width: 760px) {
+  .home-stats-wrap {
+    margin: 15px auto 35px !important;
+  }
+  .home-stats-strip {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+  .stat-divider {
+    display: none !important;
+  }
+  .stat-num {
+    font-size: 22px !important;
+  }
+  .stat-label {
+    font-size: 9.5px !important;
+  }
+  .home-intro {
+    padding: 32px 18px !important;
+    margin-bottom: 45px !important;
+    border-radius: 20px !important;
+  }
+  .home-intro h2 {
+    font-size: 30px !important;
+    letter-spacing: -1.5px !important;
+  }
+  .home-pillars {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding-bottom: 60px !important;
+  }
+  .home-pillar {
+    min-height: 230px !important;
+    padding: 24px 20px !important;
+  }
+  .home-contact {
+    display: grid !important;
+    padding: 36px 18px !important;
+    margin-bottom: 50px !important;
+    border-radius: 20px !important;
+  }
+  .query-form {
+    padding: 20px 16px !important;
+  }
+}
