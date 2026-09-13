@@ -77,9 +77,10 @@ if (topicPage) {
 	topicPage.querySelector('#topic-use').textContent = topic.use;
 	topicPage.querySelector('#topic-project').textContent = topic.project;
 }
-const curriculumTree = document.querySelector('.learning-tree');
-if (curriculumTree) {
+const allLearningTrees = document.querySelectorAll('.learning-tree');
+if (allLearningTrees.length) {
 	const exactLogos = {
+		// Curriculum Tree Skills
 		'sensors & actuators': '◉',
 		'dc, servo & stepper motors': '↻',
 		'motor drivers, leds & displays': '↻',
@@ -120,7 +121,39 @@ if (curriculumTree) {
 		'line following & obstacle avoidance': '✦',
 		'agv/amr and navigation concepts': 'R2',
 		'ros 2 and robot simulation': '↻',
-		'slam, nodes, topics & actions': 'R2'
+		'slam, nodes, topics & actions': 'R2',
+
+		// Lab Station Tools & Equipment
+		'arduino uno, mega & nano': '▣',
+		'esp32 dual-core wi-fi & ble': '⌁',
+		'raspberry pi 4 model b (4gb)': 'Py',
+		'hardware logic probes & analyzers': '⌘',
+		'dual-monitor coding stations': '⌘',
+		'ultrasonic & tof laser distance': '◉',
+		'9-dof imu accelerometer & gyro': '◈',
+		'servo torque & back-emf testing': '↻',
+		'regulated variable dc power supplies': '⌬',
+		'digital multimeters & probes': '⌬',
+		'python 3.11 & opencv 4 pipeline': 'CV',
+		'google coral edge tpu coprocessor': 'AI',
+		'high-fps wide-angle video cameras': '◉',
+		'custom image dataset training rig': 'AI',
+		'gesture recognition arenas': '✦',
+		'local & cloud mqtt brokers': '⌁',
+		'real-time live web dashboards': '☁',
+		'esp-now zero-lag mesh links': '⌁',
+		'capacitive environmental sensors': '◉',
+		'solid-state relay control nodes': '⌬',
+		'creality precision 3d printers': '3D',
+		'premium pla & petg filaments': '✦',
+		'autodesk fusion 360 & tinkercad cad': '3D',
+		'digital vernier calipers & gauges': '⚙',
+		'mechanical assembly & fastener depot': '3D',
+		'50 sq ft modular obstacle arena': '⚡',
+		'precision high-contrast line track': '↻',
+		'variable surface friction mats': '✦',
+		'padded safety perimeter rails': '🛡',
+		'overhead speed & lap time traps': '⏱'
 	};
 
 	const iconForText = text => {
@@ -141,10 +174,12 @@ if (curriculumTree) {
 		return '✦';
 	};
 
-	curriculumTree.querySelectorAll('.tree-card li').forEach(item => {
-		const text = item.textContent.trim();
-		const iconText = iconForText(text);
-		item.innerHTML = `<span class="tree-item-logo" title="Skill icon">${iconText}</span><span class="tree-item-text">${text}</span>`;
+	allLearningTrees.forEach(tree => {
+		tree.querySelectorAll('.tree-card li').forEach(item => {
+			const text = item.textContent.trim();
+			const iconText = iconForText(text);
+			item.innerHTML = `<span class="tree-item-logo" title="Skill icon">${iconText}</span><span class="tree-item-text">${text}</span>`;
+		});
 	});
 }
 const tiltSurfaces = document.querySelectorAll('[data-tilt]');
@@ -165,7 +200,7 @@ if (tiltSurfaces.length && window.matchMedia('(hover: hover)').matches) {
 }
 const homePage = document.querySelector('.home-page');
 if (homePage && 'IntersectionObserver' in window) {
-	const revealItems = homePage.querySelectorAll('main > section:not(.home-hero), .method-card, .home-pillar-card, .invention-card, .advantage-card');
+	const revealItems = homePage.querySelectorAll('main > section:not(.home-hero), .method-card, .home-pillar-card, .invention-card, .advantage-card, .arena-card, .age-card, .home-video-teaser');
 	revealItems.forEach((item, index) => {
 		item.classList.add('scroll-reveal');
 		item.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 80, 280)}ms`);
@@ -181,7 +216,7 @@ if (homePage && 'IntersectionObserver' in window) {
 	revealItems.forEach(item => revealObserver.observe(item));
 }
 
-// 1-Line Tree Timeline Scroll-Down Reveal ("jese slide kru vese vese niche aaye vo")
+// Tree Timeline Scroll-Down Reveal for ALL tree cards (Curriculum & Lab)
 const treeCards = document.querySelectorAll('.tree-card');
 if (treeCards.length && 'IntersectionObserver' in window) {
 	const treeObserver = new IntersectionObserver((entries) => {

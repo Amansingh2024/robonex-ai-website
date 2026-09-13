@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Lab | RoboNex AI</title>
-  <meta name="description" content="Explore the real robotics, electronics, AI vision and fabrication tools inside the RoboNex lab." />
+  <title>Our Lab | RoboNex AI Hands-On Robotics &amp; AI Laboratory</title>
+  <meta name="description" content="Tour the RoboNex AI physical lab infrastructure: embedded controllers, computer vision rigs, 3D print farm, and autonomous arena." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,29 +12,278 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="inner-page lab-page">
+  <div class="grain"></div>
+
+  <!-- Header Navigation -->
   <header class="nav wrap">
     <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
     <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav><a href="home.html">Home</a><a href="curriculum.html">Curriculum</a><a href="projects.html">Projects</a><a href="lab.html">Our Lab</a><a class="nav-cta" href="home.html#contact">Book a trial <i>↗</i></a></nav>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="projects.html">Projects</a>
+      <a href="videos.html">3D Robots</a>
+      <a href="lab.html" class="active-nav">Our Lab</a>
+      <a class="nav-cta" href="home.html#contact">Book a trial <i>↗</i></a>
+    </nav>
   </header>
+
   <main class="wrap">
+    <!-- Hero Section -->
     <section class="inner-hero lab-hero">
-      <p class="eyebrow lab-type lab-type-1"><span></span> THE MAKER'S PLAYGROUND</p>
-      <h1><span class="lab-type lab-type-2">Everything to</span><br /><em class="lab-type lab-type-3">turn ideas real.</em></h1>
-      <p class="lab-type lab-type-4">A safe, supervised workspace stocked with the professional tools children need to prototype boldly, test confidently and understand how intelligent machines work.</p>
+      <p class="eyebrow"><span></span> THE MAKER'S PHYSICAL FORGE</p>
+      <h1>Where curiosity meets<br /><em>real hardware.</em></h1>
+      <p>A supervised, professional engineering space stocked with industry-grade tools, sensor testbenches, 3D printers, neural accelerators, and an autonomous robot testing arena.</p>
     </section>
-    <section class="lab-layout">
-      <div class="lab-photo-frame tilt-surface" data-tilt><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1400&q=90" alt="Student working with technology in the RoboNex lab" /><span>ROBONEX LAB / LIVE BUILD</span></div>
-      <div class="lab-list">
-        <article class="lab-tool tilt-surface" data-tilt><div class="lab-tool-photo"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=500&amp;q=85" alt="Electronics controller board" /></div><i>◉</i><div><h2 class="lab-card-type">Controllers</h2><p class="lab-card-type">Arduino UNO &amp; Nano · ESP32 · ESP8266 · Raspberry Pi · Pico</p><small class="lab-card-type">Students learn how a controller reads inputs and commands a real machine.</small></div></article>
-        <article class="lab-tool tilt-surface" data-tilt><div class="lab-tool-photo"><img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&amp;fit=crop&amp;w=500&amp;q=85" alt="Camera and sensor equipment" /></div><i>⌁</i><div><h2 class="lab-card-type">Sensors &amp; AI Vision</h2><p class="lab-card-type">Ultrasonic · IR · ToF · IMU · GPS · Cameras · Depth &amp; AI cameras</p><small class="lab-card-type">Students turn light, distance, motion and camera data into useful decisions.</small></div></article>
-        <article class="lab-tool tilt-surface" data-tilt><div class="lab-tool-photo"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&amp;fit=crop&amp;w=500&amp;q=85" alt="Robot used for motion and robotics" /></div><i>⚙</i><div><h2 class="lab-card-type">Motion &amp; Robotics</h2><p class="lab-card-type">DC · Servo · Stepper · robotic arms · AGV · 2WD/4WD chassis</p><small class="lab-card-type">Students build movement systems, tune motors and give robots a purpose.</small></div></article>
-        <article class="lab-tool tilt-surface" data-tilt><div class="lab-tool-photo"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;w=500&amp;q=85" alt="Engineering fabrication workspace" /></div><i>⬡</i><div><h2 class="lab-card-type">Fabrication</h2><p class="lab-card-type">3D printer · CAD tools · soldering station · multimeter · hand tools</p><small class="lab-card-type">Students turn digital ideas into physical parts they can assemble and improve.</small></div></article>
+
+    <!-- Lab Infrastructure Tree (Alternating 1 Left, 2 Right, 3 Left...) -->
+    <section class="learning-tree lab-tree" aria-labelledby="lab-tree-title">
+      <div class="tree-root tree-root-line">
+        <span>⚙</span>
+        <div>
+          <small>ROBONEX PHYSICAL INFRASTRUCTURE</small>
+          <b class="tree-divider">—</b>
+          <strong id="lab-tree-title">Lab Workstation &amp; Equipment Tree</strong>
+        </div>
+      </div>
+
+      <div class="tree-timeline">
+        <div class="tree-timeline-track"></div>
+        <div class="tree-timeline-progress" id="tree-progress"></div>
+
+        <div class="tree-grid">
+          
+          <!-- Station 01 (Left) -->
+          <article class="tree-card tree-card-left definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 01 houses dedicated workstations configured with Arduino IDE, VS Code, logic analyzers, and multi-protocol programmers for embedded firmware.">
+            <div class="tree-node"><span class="node-num">01</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">01 / EMBEDDED COMPUTING</span>
+              <i class="tree-card-icon" title="Microcontroller station">▣</i>
+            </div>
+            <h2>Microcontroller &amp; Firmware Station</h2>
+            <p class="station-summary">High-reliability development rigs where students write C/C++ and MicroPython code, flash microcontrollers, and inspect serial data streams.</p>
+            <ul>
+              <li>Arduino Uno, Mega &amp; Nano</li>
+              <li>ESP32 Dual-Core Wi-Fi &amp; BLE</li>
+              <li>Raspberry Pi 4 Model B (4GB)</li>
+              <li>Hardware Logic Probes &amp; Analyzers</li>
+              <li>Dual-Monitor Coding Stations</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+          <!-- Station 02 (Right) -->
+          <article class="tree-card tree-card-right definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 02 features precision oscilloscopes, variable bench power supplies, and sensor calibration mounts to test electrical signals and eliminate noise.">
+            <div class="tree-node"><span class="node-num">02</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">02 / SENSORS &amp; MECHATRONICS</span>
+              <i class="tree-card-icon" title="Sensors and Actuators">⚙</i>
+            </div>
+            <h2>Sensor &amp; Signal Processing Rig</h2>
+            <p class="station-summary">Equipped with calibrated measurement devices to test ultrasonic sonar, time-of-flight LiDAR, infrared matrices, and motor driver current loads.</p>
+            <ul>
+              <li>Ultrasonic &amp; ToF Laser Distance</li>
+              <li>9-DOF IMU Accelerometer &amp; Gyro</li>
+              <li>Servo Torque &amp; Back-EMF Testing</li>
+              <li>Regulated Variable DC Power Supplies</li>
+              <li>Digital Multimeters &amp; Probes</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+          <!-- Station 03 (Left) -->
+          <article class="tree-card tree-card-left definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 03 is our dedicated AI vision workbench, running high-frame-rate depth cameras and edge neural network accelerators for real-time model inference.">
+            <div class="tree-node"><span class="node-num">03</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">03 / VISION &amp; SPATIAL AI</span>
+              <i class="tree-card-icon" title="Computer Vision and AI">◈</i>
+            </div>
+            <h2>Edge AI &amp; Computer Vision Neural Rig</h2>
+            <p class="station-summary">Students connect wide-angle optical cameras to Python OpenCV environments, executing real-time object tracking, face recognition, and color sorting algorithms.</p>
+            <ul>
+              <li>Python 3.11 &amp; OpenCV 4 Pipeline</li>
+              <li>Google Coral Edge TPU Coprocessor</li>
+              <li>High-FPS Wide-Angle Video Cameras</li>
+              <li>Custom Image Dataset Training Rig</li>
+              <li>Gesture Recognition Arenas</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+          <!-- Station 04 (Right) -->
+          <article class="tree-card tree-card-right definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 04 connects smart IoT hardware to cloud telemetry, simulating industrial SCADA systems, remote relays, and real-time dashboard analytics.">
+            <div class="tree-node"><span class="node-num">04</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">04 / IOT &amp; WIRELESS MESH</span>
+              <i class="tree-card-icon" title="IoT and wireless mesh">⌁</i>
+            </div>
+            <h2>IoT Telemetry &amp; Wireless Cloud Hub</h2>
+            <p class="station-summary">Simulating real-world connected factories and smart homes. Students deploy local MQTT brokers, Wi-Fi mesh networks, and live web dashboards.</p>
+            <ul>
+              <li>Local &amp; Cloud MQTT Brokers</li>
+              <li>Real-Time Live Web Dashboards</li>
+              <li>ESP-NOW Zero-Lag Mesh Links</li>
+              <li>Capacitive Environmental Sensors</li>
+              <li>Solid-State Relay Control Nodes</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+          <!-- Station 05 (Left) -->
+          <article class="tree-card tree-card-left definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 05 contains our additive manufacturing 3D print farm, filament dehumidifiers, and CAD workstations where students print robot chassis and custom gears.">
+            <div class="tree-node"><span class="node-num">05</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">05 / MECHANICAL FABRICATION</span>
+              <i class="tree-card-icon" title="Mechanical Design and CAD">3D</i>
+            </div>
+            <h2>CAD Mechanical Engineering &amp; 3D Print Farm</h2>
+            <p class="station-summary">From parametric sketches to solid plastic prototypes. Students design mechanical joints, robot chassis, and gearboxes in CAD and print them with millimeter accuracy.</p>
+            <ul>
+              <li>Creality Precision 3D Printers</li>
+              <li>Premium PLA &amp; PETG Filaments</li>
+              <li>Autodesk Fusion 360 &amp; Tinkercad CAD</li>
+              <li>Digital Vernier Calipers &amp; Gauges</li>
+              <li>Mechanical Assembly &amp; Fastener Depot</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+          <!-- Station 06 (Right) -->
+          <article class="tree-card tree-card-right definition-trigger tilt-surface" data-tilt tabindex="0" role="button" data-definition="Station 06 is our dedicated 50 sq ft testing arena with modular maze walls, reflective line tracks, and safety perimeter guards for mobile robot testing.">
+            <div class="tree-node"><span class="node-num">06</span></div>
+            <div class="tree-node-stem"></div>
+            <div class="tree-card-top">
+              <span class="tree-stage-badge">06 / TESTING &amp; ARENA RUNS</span>
+              <i class="tree-card-icon" title="Autonomous arena">⌬</i>
+            </div>
+            <h2>Autonomous Arena &amp; Testing Ground</h2>
+            <p class="station-summary">The ultimate proving arena. Wheeled rovers, obstacle-avoiders, and AGV machines are stress-tested against real boundary conditions, slope angles, and lighting shifts.</p>
+            <ul>
+              <li>50 Sq Ft Modular Obstacle Arena</li>
+              <li>Precision High-Contrast Line Track</li>
+              <li>Variable Surface Friction Mats</li>
+              <li>Padded Safety Perimeter Rails</li>
+              <li>Overhead Speed &amp; Lap Time Traps</li>
+            </ul>
+            <span class="tree-explore-btn">Inspect Station Equipment <i>↗</i></span>
+          </article>
+
+        </div>
       </div>
     </section>
-    <section class="lab-detail-strip"><span class="lab-card-type">01 / TOUCH THE HARDWARE</span><span class="lab-card-type">02 / WRITE THE LOGIC</span><span class="lab-card-type">03 / TEST THE RESULT</span></section>
+
+    <!-- Lab Workbench Gallery Showcase -->
+    <section class="lab-gallery-section">
+      <div class="gallery-header">
+        <p class="eyebrow"><span></span> VISUAL TOUR OF WORKBENCHES</p>
+        <h2>Built for focus.<br /><em>Engineered for discovery.</em></h2>
+      </div>
+
+      <div class="lab-gallery-grid">
+        <div class="gallery-card tilt-surface" data-tilt>
+          <div class="gallery-media">
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=85" alt="Robotics workbench with tools and electronics" />
+            <span class="gallery-tag">STATION / CIRCUITS</span>
+          </div>
+          <div class="gallery-copy">
+            <h3>Individual Maker Workbenches</h3>
+            <p>Every student has their own antistatic soldering mat, regulated DC power, breadboard kit, and multimeter.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card tilt-surface" data-tilt>
+          <div class="gallery-media">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=85" alt="3D printing rapid prototyping lab" />
+            <span class="gallery-tag">STATION / PRINT FARM</span>
+          </div>
+          <div class="gallery-copy">
+            <h3>Rapid Additive 3D Print Farm</h3>
+            <p>Multiple 3D printers running continuously so student CAD designs become physical hardware within hours.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card tilt-surface" data-tilt>
+          <div class="gallery-media">
+            <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=800&q=85" alt="Autonomous robot testing arena floor" />
+            <span class="gallery-tag">STATION / ARENA</span>
+          </div>
+          <div class="gallery-copy">
+            <h3>Robotics Arena &amp; Obstacle Course</h3>
+            <p>A padded arena where students benchmark line followers, maze solvers, and vision-guided mobile robots.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lab Safety & Culture Guarantees -->
+    <section class="lab-safety-section tilt-surface" data-tilt>
+      <div class="safety-header">
+        <p class="eyebrow"><span></span> UNCOMPROMISED STANDARDS</p>
+        <h2>Safety, Mentorship &amp; Ethics</h2>
+      </div>
+
+      <div class="safety-grid">
+        <div class="safety-card">
+          <span class="safety-icon">🛡</span>
+          <h3>Safe Low-Voltage DC Only</h3>
+          <p>All student experiment benches are strictly isolated to low-voltage 3.3V, 5V, and 12V DC power supplies.</p>
+        </div>
+
+        <div class="safety-card">
+          <span class="safety-icon">👨‍🏫</span>
+          <h3>1:1 Guided Mentorship</h3>
+          <p>Experienced robotics and software engineers supervise all sessions with a strict 1:6 student-to-mentor ratio.</p>
+        </div>
+
+        <div class="safety-card">
+          <span class="safety-icon">🔬</span>
+          <h3>Real Hardware, Real Tools</h3>
+          <p>Students use authentic wire strippers, digital calipers, hot-air reflow stations, and logic analyzers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP Trial Visit Callout -->
+    <section class="video-cta-banner tilt-surface" data-tilt style="margin-top: 60px;">
+      <div class="video-cta-copy">
+        <p class="eyebrow"><span></span> VISIT IN PERSON</p>
+        <h2>Experience our laboratory.<br /><em>Book a 45-minute hands-on trial.</em></h2>
+        <p>Bring your child to explore our hardware stations, build their first working circuit, and meet our senior robotics mentors.</p>
+      </div>
+      <div class="video-cta-actions">
+        <a class="button" href="home.html#contact">Book Free Trial Session <b>→</b></a>
+        <a class="button-outline" href="tel:+917667617870">☎ Call 7667617870</a>
+      </div>
+    </section>
   </main>
-  <footer class="wrap"><a class="brand" href="index.html"><span class="brand-mark">R</span>robonex<span>ai</span></a></footer>
+
+  <!-- Footer -->
+  <footer class="wrap home-footer">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+        <p class="footer-tagline">Empowering the next generation of robotics and AI innovators through physical engineering.</p>
+      </div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html">3D Robots</a>
+        <a href="lab.html">Our Lab</a>
+        <a href="tel:+917667617870">☎ 7667617870</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RoboNex AI Learning Lab. All rights reserved.</p>
+      <span class="footer-badge">HANDS-ON • REAL HARDWARE • INDUSTRY AI</span>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

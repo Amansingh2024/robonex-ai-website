@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Robot Cinema &amp; Technology Demonstrations | RoboNex AI</title>
+  <meta name="description" content="Watch advanced 3D robotics, humanoid agility, computer vision and autonomous AI in action at RoboNex AI Learning Lab." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="inner-page video-page">
+  <div class="grain"></div>
+
+  <!-- Navigation -->
+  <header class="nav wrap">
+    <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="projects.html">Projects</a>
+      <a href="videos.html" class="active-nav">3D Robots</a>
+      <a href="lab.html">Our Lab</a>
+      <a class="nav-cta" href="home.html#contact">Book a trial <i>↗</i></a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Hero Section -->
+    <section class="inner-hero video-hero">
+      <p class="eyebrow"><span></span> 3D ROBOTICS &amp; ARTIFICIAL INTELLIGENCE IN ACTION</p>
+      <h1>Machines that move.<br /><em>Intelligence that acts.</em></h1>
+      <p>Explore world-class robotics breakthroughs in dynamic bipedal locomotion, tactile manipulation, quadruped agility, and industrial computer vision. See the physical principles our students learn to build from scratch.</p>
+    </section>
+
+    <!-- 4 High-Tech Video Showcase Cards -->
+    <section class="video-showcase-grid">
+      
+      <!-- Video 1: Atlas Humanoid -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/tF4DML7FIWk?rel=0&modestbranding=1" 
+            title="Atlas Humanoid Robot Parkour &amp; Dynamic Agility" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● STABILIZATION / 1000 HZ</span>
+            <span class="video-telemetry-badge">HYDRAULIC + BLDC</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">01 / DYNAMIC BIPEDAL MOBILITY</span>
+            <small class="video-duration">4K CINEMATIC DEMO</small>
+          </div>
+          <h2>Atlas Humanoid: Whole-Body Dynamic Parkour &amp; Balance</h2>
+          <p class="video-description">
+            Witness how real-time Model-Predictive Control (MPC) and spatial perception allow a 90-kg humanoid robot to sprint, leap across angled balance beams, and execute continuous backflips without breaking momentum.
+          </p>
+          
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Our students begin with dual-wheel self-balancing rovers using PID control loops and IMU gyroscopes in Level 01 &amp; Level 07 before advancing to multi-joint gait coordination.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>Real-time IMU Loop</span>
+            <span class="tech-badge"><b class="tech-badge-logo">3D</b>CAD Bionic Joints</span>
+            <span class="tech-badge"><b class="tech-badge-logo">◈</b>Depth LiDAR Vision</span>
+            <span class="tech-badge"><b class="tech-badge-logo">⚡</b>Dynamic Trajectory</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 2: Tesla Optimus Gen 2 -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/cpwsg0oZeqE?rel=0&modestbranding=1" 
+            title="Tesla Optimus Gen 2 Humanoid Robot Autonomous Sorting" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● NEURAL PERCEPTION / 2D+3D</span>
+            <span class="video-telemetry-badge">11-DOF TACTILE HAND</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">02 / SPATIAL AI &amp; FINE MANIPULATION</span>
+            <small class="video-duration">OFFICIAL LAB FOOTAGE</small>
+          </div>
+          <h2>Tesla Optimus Gen 2: Autonomous Neural Object Sorting</h2>
+          <p class="video-description">
+            Equipped with custom actuators and 11-degrees-of-freedom articulated hands, this humanoid utilizes an end-to-end trained neural network to autonomously sort colored blocks, calibrate grip force, and handle fragile objects without crushing them.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>In Level 03 (AI) &amp; Level 04 (Vision), students train their own convolutional models and OpenCV color detectors to build autonomous sorting arms that execute real pick-and-place cycles.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">AI</b>Neural Net Inference</span>
+            <span class="tech-badge"><b class="tech-badge-logo">Py</b>Python 3 &amp; OpenCV</span>
+            <span class="tech-badge"><b class="tech-badge-logo">◉</b>Tactile Pressure Sensor</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↻</b>Harmonic Servos</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 3: MIT Mini Cheetah -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/xNeZWP5Mx9s?rel=0&modestbranding=1" 
+            title="MIT Mini Cheetah Quadruped Robot Agility &amp; Backflips" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● GAIT FREQUENCY / 20 HZ</span>
+            <span class="video-telemetry-badge">TORQUE CONTROL / CAN BUS</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">03 / BIO-INSPIRED QUADRUPED ROBOTICS</span>
+            <small class="video-duration">RESEARCH LAB BENCHMARK</small>
+          </div>
+          <h2>MIT Mini Cheetah: Bio-Inspired Quadruped Agility &amp; Flips</h2>
+          <p class="video-description">
+            See high-torque custom electric motors and low-inertia leg linkages perform 360-degree backflips, recover from sudden impacts, and adaptively traverse rough gravel and uneven steps at speeds exceeding 8 km/h.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students master mechanical linkage design, gear ratio optimization, and motor torque distribution in Level 06 Mechanical Engineering to build resilient robot chassis that survive real impacts.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>CAN-Bus Controller</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↻</b>Custom BLDC Motors</span>
+            <span class="tech-badge"><b class="tech-badge-logo">✦</b>Gait Trajectory Math</span>
+            <span class="tech-badge"><b class="tech-badge-logo">3D</b>Carbon &amp; Aluminum CAD</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 4: Precision 6-DOF Industrial Robotic Arm -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/4PaTWms9V5U?rel=0&modestbranding=1" 
+            title="High-Precision Industrial Robotic Arm Computer Vision Assembly" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● REPEATABILITY / ±0.02 MM</span>
+            <span class="video-telemetry-badge">ROS 2 / MOVEIT KINEMATICS</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">04 / KINEMATICS &amp; INDUSTRIAL AUTOMATION</span>
+            <small class="video-duration">HIGH-PRECISION LAB WORK</small>
+          </div>
+          <h2>6-DOF Articulated Robotic Arm: Vision-Guided Micro-Assembly</h2>
+          <p class="video-description">
+            Demonstrating mathematical inverse kinematics and camera-over-gripper visual servoing. The 6-axis arm tracks random component placements on a conveyor, smoothly interpolates multi-axis joint angles, and executes high-speed placement.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students write forward and inverse kinematic solvers in Python, controlling multi-axis servo arms that calculate angles based on live camera video coordinates.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">3D</b>6-Axis Kinematics</span>
+            <span class="tech-badge"><b class="tech-badge-logo">CV</b>OpenCV Vision Feed</span>
+            <span class="tech-badge"><b class="tech-badge-logo">R2</b>ROS 2 Motion Planning</span>
+            <span class="tech-badge"><b class="tech-badge-logo">⌬</b>Electronic Pneumatic Gripper</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Bottom Action Banner -->
+    <section class="video-cta-banner tilt-surface" data-tilt>
+      <div class="video-cta-copy">
+        <p class="eyebrow"><span></span> BECOME THE ENGINEER BEHIND THE MACHINE</p>
+        <h2>Ready to build working robots<br /><em>with your own hands?</em></h2>
+        <p>At RoboNex AI, young creators (ages 6–16) don't just watch videos—they design circuits, program microcontrollers, and deploy real AI algorithms.</p>
+      </div>
+      <div class="video-cta-actions">
+        <a class="button" href="curriculum.html">Explore Curriculum Pathway <b>→</b></a>
+        <a class="button-outline" href="lab.html">Inspect Our Lab Equipment <b>↗</b></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="wrap home-footer">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+        <p class="footer-tagline">Empowering the next generation of robotics and AI innovators through physical engineering.</p>
+      </div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html">3D Robots</a>
+        <a href="lab.html">Our Lab</a>
+        <a href="tel:+917667617870">☎ 7667617870</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RoboNex AI Learning Lab. All rights reserved.</p>
+      <span class="footer-badge">HANDS-ON • REAL HARDWARE • INDUSTRY AI</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
