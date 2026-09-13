@@ -81,15 +81,19 @@ const curriculumTree = document.querySelector('.learning-tree');
 if (curriculumTree) {
 	const iconForText = text => {
 		const value = text.toLowerCase();
-		if (value.includes('sensor') || value.includes('camera')) return '◉';
-		if (value.includes('motor') || value.includes('actuator') || value.includes('robot')) return '↻';
-		if (value.includes('arduino') || value.includes('esp32') || value.includes('raspberry')) return '▣';
-		if (value.includes('circuit') || value.includes('breadboard') || value.includes('led')) return '⌬';
-		if (value.includes('python') || value.includes('code') || value.includes('program')) return 'Py';
-		if (value.includes('ai') || value.includes('machine') || value.includes('dataset')) return 'AI';
-		if (value.includes('wifi') || value.includes('mqtt') || value.includes('cloud')) return '⌁';
-		if (value.includes('cad') || value.includes('gear') || value.includes('gripper')) return '3D';
-		if (value.includes('ros') || value.includes('slam') || value.includes('navigation')) return 'R2';
+		if (value.includes('scratch') || value.includes('pictoblox') || value.includes('block coding')) return '✦';
+		if (value.includes('vs code') || value.includes('git')) return '⌘';
+		if (value.includes('c/c++') || value.includes('arduino ide') || value.includes('arduino') || value.includes('esp32') || value.includes('raspberry')) return '▣';
+		if (value.includes('python') || value.includes('micropython')) return 'Py';
+		if (value.includes('opencv')) return 'CV';
+		if (value.includes('camera') || value.includes('sensor') || value.includes('remote sensor')) return '◉';
+		if (value.includes('vision') || value.includes('tracking') || value.includes('recognition') || value.includes('detection')) return '◈';
+		if (value.includes('ai') || value.includes('machine learning') || value.includes('dataset') || value.includes('classification')) return 'AI';
+		if (value.includes('wifi') || value.includes('bluetooth') || value.includes('mqtt') || value.includes('cloud') || value.includes('smart-home')) return '⌁';
+		if (value.includes('cad') || value.includes('3d print') || value.includes('chassis') || value.includes('gear') || value.includes('gripper') || value.includes('fabrication')) return '3D';
+		if (value.includes('ros') || value.includes('slam') || value.includes('agv') || value.includes('amr') || value.includes('autonomous') || value.includes('navigation')) return 'R2';
+		if (value.includes('motor') || value.includes('actuator') || value.includes('line following') || value.includes('obstacle')) return '↻';
+		if (value.includes('circuit') || value.includes('breadboard') || value.includes('driver') || value.includes('led')) return '⌬';
 		return '✦';
 	};
 	curriculumTree.querySelectorAll('.tree-card li').forEach(item => {
@@ -116,10 +120,10 @@ if (tiltSurfaces.length && window.matchMedia('(hover: hover)').matches) {
 }
 const homePage = document.querySelector('.home-page');
 if (homePage && 'IntersectionObserver' in window) {
-	const revealItems = homePage.querySelectorAll('main > section:not(.home-hero), .home-pillars > a');
+	const revealItems = homePage.querySelectorAll('main > section:not(.home-hero), .method-card, .home-pillar-card, .invention-card, .advantage-card');
 	revealItems.forEach((item, index) => {
 		item.classList.add('scroll-reveal');
-		item.style.setProperty('--reveal-delay', `${Math.min(index * 70, 280)}ms`);
+		item.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 80, 280)}ms`);
 	});
 	const revealObserver = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
@@ -128,7 +132,7 @@ if (homePage && 'IntersectionObserver' in window) {
 				revealObserver.unobserve(entry.target);
 			}
 		});
-	}, { threshold: 0.14 });
+	}, { threshold: 0.12 });
 	revealItems.forEach(item => revealObserver.observe(item));
 }
 
