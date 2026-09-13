@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum | RoboNex AI</title>
+  <meta name="description" content="A practical AI and robotics learning tree for young makers." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="inner-page">
+  <header class="nav wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav>
+      <a href="curriculum.html">Curriculum</a><a href="projects.html">Projects</a><a href="lab.html">Our Lab</a><a class="nav-cta" href="index.html#contact">Book a trial <i>↗</i></a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="inner-hero">
+      <p class="eyebrow"><span></span> A COMPLETE TECHNOLOGY PATHWAY</p>
+      <h1>Learn it.<br /><em>Build it. Own it.</em></h1>
+      <p>From a first blinking LED to autonomous robots, every branch turns curiosity into a practical superpower.</p>
+    </section>
+
+    <section class="learning-tree" aria-labelledby="tree-title">
+      <div class="tree-root tree-root-line"><span>✦</span><div><small>ROBONEX LEARNING TREE</small><b class="tree-divider">—</b><strong id="tree-title">Young Innovator</strong></div></div>
+      <div class="tree-line"></div>
+      <div class="tree-grid">
+        <article id="robotics" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Robotics and electronics teaches students how machines sense the world, move safely, and respond through real circuits and controllers."><i title="Robotics and electronics">⚙</i><p>01 / FOUNDATION</p><h2>Robotics &amp; Electronics</h2><ul><li>Sensors &amp; actuators</li><li>DC, servo &amp; stepper motors</li><li>Motor drivers, LEDs &amp; displays</li><li>Arduino, ESP32 &amp; Raspberry Pi</li><li>Circuits &amp; breadboard prototyping</li></ul></article>
+        <article id="coding" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Programming gives students the instructions behind every invention, starting with visual blocks and growing into Python, C/C++, MicroPython, and Git."><i title="Programming and coding">⌘</i><p>02 / CREATE</p><h2>Programming &amp; Coding</h2><ul><li>Block coding, Scratch &amp; PictoBlox</li><li>Arduino IDE and C/C++ basics</li><li>Python &amp; MicroPython</li><li>VS Code and Git/GitHub</li><li>Logic, variables &amp; control flow</li></ul></article>
+        <article id="ai" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Artificial intelligence helps students train machines to find patterns, classify images, understand datasets, and make useful decisions with responsible automation."><i title="Artificial intelligence">◉</i><p>03 / THINK</p><h2>Artificial Intelligence</h2><ul><li>AI &amp; machine learning fundamentals</li><li>Datasets and model concepts</li><li>Image classification</li><li>Object and face detection</li><li>Pose, gesture &amp; AI automation</li></ul></article>
+        <article id="vision" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Computer vision turns camera feeds into information. Students build counters and recognition projects with image processing, tracking, Python, and OpenCV."><i title="Computer vision">◈</i><p>04 / SEE</p><h2>Computer Vision</h2><ul><li>Camera-based projects</li><li>Image processing with Python</li><li>Object tracking &amp; vision counter</li><li>Colour and shape recognition</li><li>OpenCV foundations</li></ul></article>
+        <article id="iot" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="IoT connects physical sensors to networks and dashboards. Students build smart-home, monitoring, and cloud-connected projects with ESP32, Wi-Fi, Bluetooth, and MQTT."><i title="IoT and smart automation">⌁</i><p>05 / CONNECT</p><h2>IoT &amp; Smart Automation</h2><ul><li>Wi-Fi, Bluetooth &amp; MQTT</li><li>ESP32 smart systems</li><li>Web dashboards &amp; cloud</li><li>Remote sensor monitoring</li><li>Smart-home automation</li></ul></article>
+        <article id="mechanical" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Mechanical design makes a robot physically work. Students design chassis, joints, gears, grippers, and prototypes using CAD, fabrication, and 3D printing."><i title="Mechanical design">⬡</i><p>06 / ENGINEER</p><h2>Mechanical Design</h2><ul><li>Chassis, wheels, gears &amp; bearings</li><li>Mechanical joints and grippers</li><li>CAD basics &amp; 3D printing</li><li>Prototype development</li><li>Fabrication and testing</li></ul></article>
+        <article id="advanced" class="tree-card definition-trigger" tabindex="0" role="button" data-definition="Advanced robotics brings all the branches together through autonomous navigation, AGV concepts, ROS 2, simulation, SLAM, and robot behaviors built from reusable components."><i title="Advanced robotics">⌬</i><p>07 / ADVANCE</p><h2>Advanced Robotics</h2><ul><li>Autonomous robots</li><li>Line following &amp; obstacle avoidance</li><li>AGV/AMR and navigation concepts</li><li>ROS 2 and robot simulation</li><li>SLAM, nodes, topics &amp; actions</li></ul></article>
+      </div>
+    </section>
+
+    <section class="software-strip" aria-labelledby="software-title">
+      <p class="eyebrow"><span></span> SOFTWARE STUDENTS GROW INTO</p>
+      <h2 id="software-title" class="subheading">The tools change. <em>The maker mindset stays.</em></h2>
+      <div class="software-list"><span class="definition-trigger tool-badge beginner" tabindex="0" role="button" title="Beginner tool" data-definition="Scratch is a visual block-based programming language where beginners learn sequences, loops, events, and logic by making interactive stories and games."><b class="tool-logo">Sc</b>Scratch</span><span class="definition-trigger tool-badge beginner" tabindex="0" role="button" title="Beginner tool" data-definition="PictoBlox combines block coding with AI and robotics extensions, helping students control hardware while experimenting with vision, speech, and smart projects."><b class="tool-logo">PB</b>PictoBlox</span><span class="definition-trigger tool-badge beginner" tabindex="0" role="button" title="Beginner tool" data-definition="Tinkercad lets students simulate simple circuits and prototype ideas safely before connecting physical components on a real breadboard."><b class="tool-logo">Ti</b>Tinkercad</span><span class="definition-trigger tool-badge intermediate" tabindex="0" role="button" title="Intermediate tool" data-definition="Python is a readable programming language used for robotics logic, data, automation, Raspberry Pi projects, and artificial intelligence."><b class="tool-logo">Py</b>Python</span><span class="definition-trigger tool-badge intermediate" tabindex="0" role="button" title="Intermediate tool" data-definition="OpenCV is a computer-vision toolkit for reading camera feeds, processing images, tracking objects, and building vision counters."><b class="tool-logo">CV</b>OpenCV</span><span class="definition-trigger tool-badge advanced" tabindex="0" role="button" title="Advanced tool" data-definition="TensorFlow and YOLO introduce students to trained models for classification and fast object detection in practical AI vision projects."><b class="tool-logo">AI</b>TensorFlow / YOLO</span><span class="definition-trigger tool-badge professional" tabindex="0" role="button" title="Professional tool" data-definition="ROS 2 and Gazebo provide professional tools for building, communicating between, and simulating larger robotic systems."><b class="tool-logo">R2</b>ROS 2 / Gazebo</span><span class="definition-trigger tool-badge professional" tabindex="0" role="button" title="Professional tool" data-definition="CAD and 3D printing turn a digital mechanical design into a physical prototype that can be assembled, tested, and improved."><b class="tool-logo">3D</b>CAD + 3D printing</span></div>
+      <aside class="definition-panel" id="definition-panel" aria-live="polite" hidden><span class="definition-icon">✦</span><div><small>SELECTED TOOL / SKILL</small><h3>Click a branch or tool</h3><p>Choose any learning branch or software badge to see what students do with it.</p><a id="definition-link" class="definition-link" href="topic.html">Open full topic page <b>↗</b></a></div></aside>
+    </section>
+  </main>
+  <footer class="wrap"><a class="brand" href="index.html"><span class="brand-mark">R</span>robonex<span>ai</span></a><p>© 2026 RoboNex AI</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
