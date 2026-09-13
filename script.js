@@ -93,11 +93,9 @@ if (curriculumTree) {
 		return '✦';
 	};
 	curriculumTree.querySelectorAll('.tree-card li').forEach(item => {
-		const icon = document.createElement('span');
-		icon.className = 'tree-item-logo';
-		icon.title = 'Related skill';
-		icon.textContent = iconForText(item.textContent);
-		item.prepend(icon);
+		const text = item.textContent.trim();
+		const iconText = iconForText(text);
+		item.innerHTML = `<span class="tree-item-logo" title="Related skill">${iconText}</span><span class="tree-item-text">${text}</span>`;
 	});
 }
 const tiltSurfaces = document.querySelectorAll('[data-tilt]');

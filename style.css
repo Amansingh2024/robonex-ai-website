@@ -913,3 +913,153 @@
     padding: 20px 16px !important;
   }
 }
+
+
+/* ========================================================
+   INTERACTIVE SKILL PILLS & LOGOS HOVER EFFECTS
+   ======================================================== */
+.tree-card ul {
+  pointer-events: auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  list-style: none !important;
+  margin: 0 0 22px !important;
+  padding: 16px 0 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.tree-card.definition-trigger ul {
+  pointer-events: auto !important;
+}
+
+.tree-card li {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 7px 14px 7px 7px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 999px !important;
+  font-size: 12.5px !important;
+  color: #e2e8e4 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transform-style: preserve-3d !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              color 0.25s ease !important;
+}
+
+.tree-card li:before {
+  display: none !important;
+  content: none !important;
+}
+
+/* 3D Hover on Skill Pills */
+.tree-card li:hover {
+  transform: translateY(-4px) scale(1.05) translateZ(12px) !important;
+  background: rgba(200, 150, 30, 0.22) !important;
+  border-color: var(--dark-golden) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(200, 150, 30, 0.45) !important;
+}
+
+/* Micro-badge with logo */
+.tree-item-logo {
+  display: grid !important;
+  place-items: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--dark-golden), #e6ad27) !important;
+  color: #0d1210 !important;
+  font: 800 11px 'DM Mono', monospace !important;
+  box-shadow: 0 0 10px rgba(200, 150, 30, 0.45) !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+
+.tree-card li:hover .tree-item-logo {
+  transform: scale(1.22) rotate(15deg) !important;
+  background: linear-gradient(135deg, var(--acid), #00f0ff) !important;
+  box-shadow: 0 0 18px var(--acid) !important;
+  color: #0d1210 !important;
+}
+
+.tree-item-text {
+  font-weight: 500 !important;
+  letter-spacing: 0.2px !important;
+  white-space: normal !important;
+}
+
+/* Software Badges in software-strip */
+.software-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+.software-list .definition-trigger,
+.software-list .tool-badge,
+.software-strip span.tool-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 7px 16px 7px 7px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  color: #e5eae6 !important;
+  cursor: pointer !important;
+  transform-style: preserve-3d !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              color 0.25s ease !important;
+}
+
+.software-list .tool-badge:hover,
+.software-strip span.tool-badge:hover,
+.software-list .definition-trigger:hover {
+  transform: translateY(-4px) scale(1.06) translateZ(12px) !important;
+  background: rgba(200, 150, 30, 0.22) !important;
+  border-color: var(--dark-golden) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 22px rgba(200, 150, 30, 0.5) !important;
+}
+
+.tool-logo,
+b.tool-logo {
+  display: grid !important;
+  place-items: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--dark-golden), #e6ad27) !important;
+  color: #0d1210 !important;
+  font: 800 11px 'DM Mono', monospace !important;
+  box-shadow: 0 0 10px rgba(200, 150, 30, 0.45) !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+
+.software-list .tool-badge:hover .tool-logo,
+.software-strip span.tool-badge:hover .tool-logo,
+.software-list .definition-trigger:hover .tool-logo {
+  transform: scale(1.22) rotate(15deg) !important;
+  background: linear-gradient(135deg, var(--acid), #00f0ff) !important;
+  box-shadow: 0 0 18px var(--acid) !important;
+  color: #0d1210 !important;
+}
