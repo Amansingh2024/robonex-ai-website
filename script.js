@@ -79,27 +79,72 @@ if (topicPage) {
 }
 const curriculumTree = document.querySelector('.learning-tree');
 if (curriculumTree) {
+	const exactLogos = {
+		'sensors & actuators': '◉',
+		'dc, servo & stepper motors': '↻',
+		'motor drivers, leds & displays': '↻',
+		'arduino, esp32 & raspberry pi': '▣',
+		'circuits & breadboard prototyping': '⌬',
+
+		'block coding, scratch & pictoblox': '✦',
+		'arduino ide and c/c++ basics': '▣',
+		'python & micropython': 'Py',
+		'vs code and git/github': 'Py',
+		'logic, variables & control flow': '✦',
+
+		'ai & machine learning fundamentals': 'AI',
+		'datasets and model concepts': 'AI',
+		'image classification': '✦',
+		'object and face detection': '✦',
+		'pose, gesture & ai automation': 'AI',
+
+		'camera-based projects': '◉',
+		'image processing with python': 'Py',
+		'object tracking & vision counter': '✦',
+		'colour and shape recognition': '✦',
+		'opencv foundations': '✦',
+
+		'wi-fi, bluetooth & mqtt': '⌁',
+		'esp32 smart systems': '▣',
+		'web dashboards & cloud': '⌁',
+		'remote sensor monitoring': '◉',
+		'smart-home automation': '✦',
+
+		'chassis, wheels, gears & bearings': '3D',
+		'mechanical joints and grippers': '3D',
+		'cad basics & 3d printing': '3D',
+		'prototype development': '✦',
+		'fabrication and testing': '✦',
+
+		'autonomous robots': '↻',
+		'line following & obstacle avoidance': '✦',
+		'agv/amr and navigation concepts': 'R2',
+		'ros 2 and robot simulation': '↻',
+		'slam, nodes, topics & actions': 'R2'
+	};
+
 	const iconForText = text => {
-		const value = text.toLowerCase();
-		if (value.includes('scratch') || value.includes('pictoblox') || value.includes('block coding')) return '✦';
-		if (value.includes('vs code') || value.includes('git')) return '⌘';
-		if (value.includes('c/c++') || value.includes('arduino ide') || value.includes('arduino') || value.includes('esp32') || value.includes('raspberry')) return '▣';
-		if (value.includes('python') || value.includes('micropython')) return 'Py';
-		if (value.includes('opencv')) return 'CV';
-		if (value.includes('camera') || value.includes('sensor') || value.includes('remote sensor')) return '◉';
-		if (value.includes('vision') || value.includes('tracking') || value.includes('recognition') || value.includes('detection')) return '◈';
-		if (value.includes('ai') || value.includes('machine learning') || value.includes('dataset') || value.includes('classification')) return 'AI';
-		if (value.includes('wifi') || value.includes('bluetooth') || value.includes('mqtt') || value.includes('cloud') || value.includes('smart-home')) return '⌁';
-		if (value.includes('cad') || value.includes('3d print') || value.includes('chassis') || value.includes('gear') || value.includes('gripper') || value.includes('fabrication')) return '3D';
-		if (value.includes('ros') || value.includes('slam') || value.includes('agv') || value.includes('amr') || value.includes('autonomous') || value.includes('navigation')) return 'R2';
-		if (value.includes('motor') || value.includes('actuator') || value.includes('line following') || value.includes('obstacle')) return '↻';
-		if (value.includes('circuit') || value.includes('breadboard') || value.includes('driver') || value.includes('led')) return '⌬';
+		const key = text.toLowerCase().trim();
+		if (exactLogos[key]) return exactLogos[key];
+		for (const [k, v] of Object.entries(exactLogos)) {
+			if (key.includes(k) || k.includes(key)) return v;
+		}
+		if (key.includes('sensor') || key.includes('camera')) return '◉';
+		if (key.includes('motor') || key.includes('robot')) return '↻';
+		if (key.includes('arduino') || key.includes('esp32')) return '▣';
+		if (key.includes('circuit') || key.includes('breadboard')) return '⌬';
+		if (key.includes('python')) return 'Py';
+		if (key.includes('ai') || key.includes('machine')) return 'AI';
+		if (key.includes('wifi') || key.includes('mqtt')) return '⌁';
+		if (key.includes('cad') || key.includes('3d') || key.includes('gear')) return '3D';
+		if (key.includes('ros') || key.includes('slam')) return 'R2';
 		return '✦';
 	};
+
 	curriculumTree.querySelectorAll('.tree-card li').forEach(item => {
 		const text = item.textContent.trim();
 		const iconText = iconForText(text);
-		item.innerHTML = `<span class="tree-item-logo" title="Related skill">${iconText}</span><span class="tree-item-text">${text}</span>`;
+		item.innerHTML = `<span class="tree-item-logo" title="Skill icon">${iconText}</span><span class="tree-item-text">${text}</span>`;
 	});
 }
 const tiltSurfaces = document.querySelectorAll('[data-tilt]');

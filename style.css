@@ -1953,3 +1953,358 @@ b.tool-logo {
     max-width: 100% !important;
   }
 }
+
+/* ==========================================================================
+   ALTERNATING ZIGZAG LEARNING TREE (1 LEFT, 2 RIGHT, 3 LEFT, 4 RIGHT...)
+   AND AUTOMATIC TEXT LIFT & LOGO GLOW ON HOVER ("apne aap text uth jaye")
+   ========================================================================== */
+
+.learning-tree {
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  padding: 50px 32px 75px !important;
+  background: rgba(18, 25, 22, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+/* Central Timeline Spine */
+.tree-timeline {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1080px !important;
+  margin: 50px auto 0 !important;
+  padding: 40px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tree-timeline-track {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 3px !important;
+  transform: translateX(-50%) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 99px !important;
+}
+
+.tree-timeline-progress {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  width: 3px !important;
+  transform: translateX(-50%) !important;
+  height: 0% !important;
+  background: linear-gradient(180deg, var(--dark-golden) 0%, var(--acid) 50%, #00f0ff 100%) !important;
+  box-shadow: 0 0 18px var(--dark-golden), 0 0 28px var(--acid) !important;
+  border-radius: 99px !important;
+  transition: height 0.18s ease-out !important;
+}
+
+.tree-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 52px !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* Card Base Structure */
+.tree-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: calc(50% - 50px) !important;
+  box-sizing: border-box !important;
+  padding: 34px 34px !important;
+  background: rgba(22, 30, 27, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(16px) !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  transform-style: preserve-3d !important;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease !important;
+}
+
+/* --- ODD CARDS (1, 3, 5, 7): 1st, 3rd, 5th, 7th ON THE LEFT SIDE --- */
+.tree-card:nth-child(odd),
+.tree-card-left {
+  align-self: flex-start !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  transform: perspective(1000px) translateX(-50px) translateY(24px) rotateY(6deg) !important;
+}
+
+.tree-card:nth-child(odd).in-view,
+.tree-card-left.in-view {
+  opacity: 1 !important;
+  transform: perspective(1000px) translateX(0) translateY(0) rotateY(0deg) !important;
+}
+
+.tree-card:nth-child(odd):hover,
+.tree-card-left:hover {
+  background: rgba(28, 40, 36, 0.96) !important;
+  border-color: var(--dark-golden) !important;
+  transform: perspective(1000px) translateY(-6px) translateZ(14px) rotateY(2deg) !important;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.6), 0 0 32px rgba(200, 150, 30, 0.35) !important;
+}
+
+.tree-card:nth-child(odd) .tree-node,
+.tree-card-left .tree-node {
+  left: auto !important;
+  right: -73px !important;
+  top: 30px !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.tree-card:nth-child(odd) .tree-node-stem,
+.tree-card-left .tree-node-stem {
+  left: auto !important;
+  right: -50px !important;
+  top: 52px !important;
+  width: 50px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), var(--dark-golden)) !important;
+}
+
+/* --- EVEN CARDS (2, 4, 6): 2nd, 4th, 6th ON THE RIGHT SIDE --- */
+.tree-card:nth-child(even),
+.tree-card-right {
+  align-self: flex-end !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  transform: perspective(1000px) translateX(50px) translateY(24px) rotateY(-6deg) !important;
+}
+
+.tree-card:nth-child(even).in-view,
+.tree-card-right.in-view {
+  opacity: 1 !important;
+  transform: perspective(1000px) translateX(0) translateY(0) rotateY(0deg) !important;
+}
+
+.tree-card:nth-child(even):hover,
+.tree-card-right:hover {
+  background: rgba(28, 40, 36, 0.96) !important;
+  border-color: var(--dark-golden) !important;
+  transform: perspective(1000px) translateY(-6px) translateZ(14px) rotateY(-2deg) !important;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.6), 0 0 32px rgba(200, 150, 30, 0.35) !important;
+}
+
+.tree-card:nth-child(even) .tree-node,
+.tree-card-right .tree-node {
+  right: auto !important;
+  left: -73px !important;
+  top: 30px !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.tree-card:nth-child(even) .tree-node-stem,
+.tree-card-right .tree-node-stem {
+  right: auto !important;
+  left: -50px !important;
+  top: 52px !important;
+  width: 50px !important;
+  height: 2px !important;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.2), var(--dark-golden)) !important;
+}
+
+/* Common Node styling along Center Spine */
+.tree-node {
+  position: absolute !important;
+  border-radius: 50% !important;
+  background: #101614 !important;
+  border: 2px solid var(--dark-golden) !important;
+  box-shadow: 0 0 18px rgba(200, 150, 30, 0.45) !important;
+  display: grid !important;
+  place-items: center !important;
+  z-index: 5 !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s !important;
+}
+
+.tree-card:hover .tree-node {
+  transform: scale(1.18) rotate(12deg) !important;
+  border-color: var(--acid) !important;
+  box-shadow: 0 0 25px var(--acid) !important;
+}
+
+/* --- AUTOMATIC TEXT LIFT & GLOWING LOGO HOVER EFFECTS ("in sb pr cursor jaye apne aap text uth jaye") --- */
+.tree-card ul {
+  pointer-events: auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  list-style: none !important;
+  margin: 0 0 22px !important;
+  padding: 18px 0 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.tree-card li {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 8px 16px 8px 8px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  color: #e2e8e4 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transform-style: preserve-3d !important;
+  perspective: 600px !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              color 0.25s ease !important;
+}
+
+/* Pill lifts in 3D */
+.tree-card li:hover {
+  transform: translateY(-6px) scale(1.05) translateZ(16px) !important;
+  background: rgba(200, 150, 30, 0.24) !important;
+  border-color: var(--dark-golden) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 22px rgba(200, 150, 30, 0.5) !important;
+}
+
+/* TEXT AUTOMATICALLY ELEVATES & GLOWS ("apne aap text uth jaye") */
+.tree-item-text {
+  display: inline-block !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px !important;
+  white-space: normal !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.25s ease !important;
+}
+
+.tree-card li:hover .tree-item-text {
+  transform: translateY(-3px) translateZ(8px) !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 16px rgba(255, 215, 0, 0.6), 0 0 8px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Glowing Micro-Logo Badge */
+.tree-item-logo {
+  display: grid !important;
+  place-items: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, var(--dark-golden), #e6ad27) !important;
+  color: #0d1210 !important;
+  font: 800 11px 'DM Mono', monospace !important;
+  box-shadow: 0 0 12px rgba(200, 150, 30, 0.5) !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              box-shadow 0.3s ease,
+              color 0.3s ease !important;
+}
+
+.tree-card li:hover .tree-item-logo {
+  transform: scale(1.28) rotate(18deg) translateY(-2px) !important;
+  background: linear-gradient(135deg, var(--acid), #00f0ff) !important;
+  box-shadow: 0 0 20px var(--acid), 0 0 30px #00f0ff !important;
+  color: #0d1210 !important;
+}
+
+/* Explore Level Button Hover Lift */
+.tree-explore-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font: 700 12px 'DM Mono', monospace !important;
+  color: var(--dark-golden) !important;
+  margin-top: auto !important;
+  padding: 6px 0 !important;
+  transition: color 0.25s ease, transform 0.25s ease !important;
+}
+
+.tree-card:hover .tree-explore-btn {
+  color: #ffd700 !important;
+  transform: translateX(6px) !important;
+}
+
+.tree-explore-btn i {
+  font-style: normal !important;
+  transition: transform 0.25s ease !important;
+}
+
+.tree-card:hover .tree-explore-btn i {
+  transform: translate(4px, -4px) !important;
+}
+
+/* --- Mobile Responsive (< 820px) --- */
+@media (max-width: 820px) {
+  .learning-tree {
+    padding: 34px 16px 55px !important;
+  }
+  .tree-timeline {
+    padding: 15px 0 15px 54px !important;
+    margin-top: 32px !important;
+  }
+  .tree-timeline-track,
+  .tree-timeline-progress {
+    left: 18px !important;
+    transform: none !important;
+  }
+  .tree-grid {
+    gap: 30px !important;
+  }
+  .tree-card,
+  .tree-card:nth-child(odd),
+  .tree-card:nth-child(even),
+  .tree-card-left,
+  .tree-card-right {
+    width: 100% !important;
+    margin: 0 !important;
+    align-self: stretch !important;
+    padding: 24px 20px !important;
+    transform: perspective(1000px) translateY(24px) !important;
+  }
+  .tree-card.in-view,
+  .tree-card:nth-child(odd).in-view,
+  .tree-card:nth-child(even).in-view {
+    transform: perspective(1000px) translateY(0) !important;
+  }
+  .tree-node,
+  .tree-card:nth-child(odd) .tree-node,
+  .tree-card:nth-child(even) .tree-node,
+  .tree-card-left .tree-node,
+  .tree-card-right .tree-node {
+    left: -54px !important;
+    right: auto !important;
+    width: 38px !important;
+    height: 38px !important;
+    top: 22px !important;
+  }
+  .tree-node-stem,
+  .tree-card:nth-child(odd) .tree-node-stem,
+  .tree-card:nth-child(even) .tree-node-stem,
+  .tree-card-left .tree-node-stem,
+  .tree-card-right .tree-node-stem {
+    left: -16px !important;
+    right: auto !important;
+    width: 16px !important;
+    top: 40px !important;
+    background: linear-gradient(90deg, var(--dark-golden), rgba(255, 255, 255, 0.2)) !important;
+  }
+  .tree-card h2 {
+    font-size: 22px !important;
+  }
+}
