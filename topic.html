@@ -3,32 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Topic | RoboNex AI</title>
-  <meta name="description" content="Explore what students build and where technology is used in the real world." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Station Equipment &amp; Robotics Rig | RoboNex AI</title>
+  <meta name="description" content="Detailed equipment breakdown, sensor specifications, and real-world industrial relevance of our hands-on engineering lab stations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="inner-page topic-page">
   <header class="nav wrap">
     <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
     <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav><a href="home.html">Home</a><a href="curriculum.html">Curriculum</a><a href="projects.html">Projects</a><a href="lab.html">Our Lab</a><a class="nav-cta" href="home.html#contact">Book a trial <i>↗</i></a></nav>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="projects.html">Projects</a>
+      <a href="videos.html">3D Robots</a>
+      <a href="lab.html" class="active-nav">Our Lab</a>
+      <a class="nav-cta" href="home.html#contact">Book a trial <i>↗</i></a>
+    </nav>
   </header>
+
   <main class="wrap topic-main">
-    <a class="back-link" href="curriculum.html">← Back to learning tree</a>
-    <section class="topic-hero">
-      <div class="topic-copy"><p class="eyebrow"><span></span><span id="topic-kicker">ROBONEX TOPIC</span></p><h1 id="topic-title">Loading topic...</h1><p id="topic-summary"></p><a class="button" href="index.html#contact">Build this with us <b>→</b></a></div>
-      <div class="topic-image tilt-surface" data-tilt><img id="topic-image" src="" alt="" /><span class="topic-image-label">REAL-WORLD PROJECT</span></div>
+    <div class="topic-nav-bar">
+      <a class="back-link" id="topic-back-link" href="lab.html">← Back to Lab Stations</a>
+      <span class="topic-live-indicator">● LIVE WORKBENCH SPECIFICATION</span>
+    </div>
+
+    <!-- Station Hero Showcase -->
+    <section class="topic-hero tilt-surface" data-tilt>
+      <div class="topic-copy">
+        <p class="eyebrow glitter-shimmer"><span></span><span id="topic-kicker">LAB STATION 01 / EMBEDDED COMPUTING</span></p>
+        <h1 id="topic-title">Microcontroller &amp; Firmware Station</h1>
+        <p id="topic-summary">High-reliability development rigs where students write C/C++ and MicroPython code, flash microcontrollers, and inspect serial data streams.</p>
+        
+        <div class="topic-actions">
+          <a class="button" href="home.html#contact">Book a Hands-On Trial <b>→</b></a>
+          <a class="button-secondary" id="topic-secondary-link" href="lab.html">All Lab Stations <i>↗</i></a>
+        </div>
+      </div>
+
+      <div class="topic-image">
+        <img id="topic-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85" alt="Hardware lab equipment" />
+        <div class="topic-image-hud">
+          <span class="topic-image-label" id="topic-image-badge">STATION EQUIPMENT BENCH</span>
+          <span class="topic-image-spec">CALIBRATED / 60 FPS</span>
+        </div>
+      </div>
     </section>
+
+    <!-- Equipment & Industrial Relevance Grid -->
     <section class="topic-grid">
-      <article class="topic-panel"><p class="eyebrow"><span></span> WHAT STUDENTS LEARN</p><h2>From idea to working prototype.</h2><ul id="topic-learnings"></ul></article>
-      <article class="topic-panel dark-topic"><p class="eyebrow"><span></span> USED IN THE REAL WORLD</p><h2 id="topic-use-title"></h2><p id="topic-use"></p><div class="topic-project"><span>PROJECT BRIEF</span><strong id="topic-project"></strong></div></article>
+      <!-- Left: Equipment & Instruments -->
+      <article class="topic-panel equipment-panel">
+        <div class="panel-header">
+          <p class="eyebrow"><span></span> <span id="topic-panel-1-tag">STATION EQUIPMENT &amp; SENSORS</span></p>
+          <span class="panel-badge">5 CORE INSTRUMENTS</span>
+        </div>
+        <h2 id="topic-panel-1-title">Precision hardware tools &amp; testbenches in this rig.</h2>
+        <ul id="topic-learnings">
+          <!-- Populated dynamically via script.js -->
+        </ul>
+      </article>
+
+      <!-- Right: Real-World Industry Application -->
+      <article class="topic-panel dark-topic industry-panel">
+        <div class="panel-header">
+          <p class="eyebrow"><span></span> <span id="topic-panel-2-tag">USED IN THE REAL WORLD</span></p>
+          <span class="panel-badge">INDUSTRY IMPACT</span>
+        </div>
+        <h2 id="topic-use-title">Automotive, Medical &amp; Industrial Systems</h2>
+        <p id="topic-use">Deterministic embedded microcontrollers power critical aerospace fly-by-wire controls, automotive ABS braking systems, and medical infusion pumps.</p>
+        
+        <div class="topic-project">
+          <span id="topic-project-label">STATION CAPSTONE BUILD</span>
+          <strong id="topic-project">Dual-Core ESP32 Telemetry Controller with FreeRTOS multi-threading and logic probe verification.</strong>
+        </div>
+      </article>
+    </section>
+
+    <!-- Bottom Lab Experience Callout -->
+    <section class="station-callout-banner tilt-surface" data-tilt>
+      <div class="callout-copy">
+        <span class="callout-tag">HANDS-ON TRIAL ACCESS</span>
+        <h3>Want your student to sit at this exact workbench?</h3>
+        <p>Book a private 45-minute lab session. Our robotics mentors walk through real wiring, logic probing, and microcontroller flashing step-by-step.</p>
+      </div>
+      <div class="callout-action">
+        <a class="button" href="home.html#contact">Schedule Lab Visit <b>→</b></a>
+      </div>
     </section>
   </main>
-  <footer class="wrap"><a class="brand" href="index.html"><span class="brand-mark">R</span>robonex<span>ai</span></a></footer>
+
+  <footer class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+        <p>A hands-on AI and robotics learning lab preparing students aged 6–16 to invent real-world machines with code, silicon, and sensors.</p>
+      </div>
+
+      <div class="footer-links">
+        <strong>Exploration</strong>
+        <a href="home.html">Home</a>
+        <a href="curriculum.html">Curriculum Tree</a>
+        <a href="projects.html">14 Hardware Builds</a>
+        <a href="videos.html">3D Robot Cinema</a>
+        <a href="lab.html">Our Lab Rigs</a>
+      </div>
+
+      <div class="footer-links">
+        <strong>Lab Stations</strong>
+        <a href="topic.html?station=station-01">01 / Embedded Computing</a>
+        <a href="topic.html?station=station-02">02 / Sensors &amp; Mechatronics</a>
+        <a href="topic.html?station=station-03">03 / Vision &amp; Spatial AI</a>
+        <a href="topic.html?station=station-04">04 / IoT &amp; Wireless Mesh</a>
+        <a href="topic.html?station=station-05">05 / Mechanical 3D Farm</a>
+        <a href="topic.html?station=station-06">06 / Autonomous Arena</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 RoboNex AI Learning Lab. All engineering patents and curriculum rights reserved.</p>
+      <div class="footer-status">
+        <span class="status-dot"></span> All 6 Lab Stations Operational
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

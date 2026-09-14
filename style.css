@@ -3320,3 +3320,338 @@ b.tool-logo {
   }
 }
 
+/* ==========================================================================
+   LAB STATION & TOPIC INSPECTION PAGE (.topic-page)
+   ========================================================================== */
+.topic-page .topic-main {
+  padding-top: 24px !important;
+  padding-bottom: 80px !important;
+}
+
+.topic-nav-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 24px !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+.back-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font: 600 13px 'DM Mono', monospace !important;
+  color: #8da496 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.back-link:hover {
+  color: var(--dark-golden-hover) !important;
+  transform: translateX(-4px) !important;
+}
+
+.topic-live-indicator {
+  font: 700 11px 'DM Mono', monospace !important;
+  color: var(--acid) !important;
+  background: rgba(198, 255, 0, 0.08) !important;
+  border: 1px solid rgba(198, 255, 0, 0.25) !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.8px !important;
+}
+
+.topic-hero {
+  display: grid !important;
+  grid-template-columns: 1.15fr 1fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+  background: linear-gradient(145deg, rgba(17, 24, 20, 0.95), rgba(9, 13, 11, 0.98)) !important;
+  border: 1px solid rgba(255, 215, 0, 0.2) !important;
+  border-radius: 28px !important;
+  padding: 40px !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.7) !important;
+  margin-bottom: 40px !important;
+}
+
+.topic-copy h1 {
+  font-size: clamp(28px, 3.4vw, 42px) !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  margin: 12px 0 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.topic-copy p {
+  color: #a4b8ab !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  max-width: 580px !important;
+}
+
+.topic-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 28px !important;
+  flex-wrap: wrap !important;
+}
+
+.button-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 11px 22px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #c9d8ce !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.button-secondary:hover {
+  background: rgba(200, 150, 30, 0.15) !important;
+  border-color: rgba(255, 215, 0, 0.4) !important;
+  color: #ffd700 !important;
+  transform: translateY(-2px) !important;
+}
+
+.topic-image {
+  position: relative !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  aspect-ratio: 16 / 11 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+.topic-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.topic-hero:hover .topic-image img {
+  transform: scale(1.05) !important;
+}
+
+.topic-image-hud {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  right: 14px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  pointer-events: none !important;
+}
+
+.topic-image-label {
+  font: 700 11px 'DM Mono', monospace !important;
+  letter-spacing: 0.8px !important;
+  background: rgba(10, 14, 12, 0.88) !important;
+  color: #ffd700 !important;
+  border: 1px solid rgba(255, 215, 0, 0.35) !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.topic-image-spec {
+  font: 600 11px 'DM Mono', monospace !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  color: var(--acid) !important;
+  border: 1px solid rgba(198, 255, 0, 0.3) !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.topic-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+  margin-bottom: 40px !important;
+}
+
+.topic-panel {
+  background: linear-gradient(160deg, rgba(18, 26, 22, 0.85), rgba(10, 14, 12, 0.95)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 24px !important;
+  padding: 34px !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.topic-panel.equipment-panel {
+  border-color: rgba(255, 215, 0, 0.22) !important;
+}
+
+.topic-panel.industry-panel {
+  border-color: rgba(0, 245, 255, 0.2) !important;
+}
+
+.panel-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 12px !important;
+}
+
+.panel-badge {
+  font: 700 10px 'DM Mono', monospace !important;
+  letter-spacing: 0.8px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #8da496 !important;
+}
+
+.topic-panel h2 {
+  font-size: 22px !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
+  margin-bottom: 20px !important;
+  font-weight: 700 !important;
+}
+
+#topic-learnings {
+  list-style: none !important;
+  display: grid !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#topic-learnings li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 14px !important;
+  padding: 12px 16px !important;
+  color: #c9d8ce !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease !important;
+}
+
+#topic-learnings li:hover {
+  transform: translateY(-2px) !important;
+  background: rgba(200, 150, 30, 0.08) !important;
+  border-color: rgba(255, 215, 0, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.learn-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background: rgba(200, 150, 30, 0.18) !important;
+  color: #ffd700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font: 800 13px 'DM Mono', monospace !important;
+  flex-shrink: 0 !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.topic-panel p#topic-use {
+  color: #9bb0a3 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 24px !important;
+}
+
+.topic-project {
+  margin-top: auto !important;
+  background: linear-gradient(135deg, rgba(200, 150, 30, 0.1), rgba(0, 245, 255, 0.05)) !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+  border-radius: 18px !important;
+  padding: 20px !important;
+}
+
+.topic-project span {
+  display: block !important;
+  font: 700 11px 'DM Mono', monospace !important;
+  letter-spacing: 0.8px !important;
+  color: var(--acid) !important;
+  margin-bottom: 6px !important;
+}
+
+.topic-project strong {
+  display: block !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  font-weight: 700 !important;
+}
+
+.station-callout-banner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 28px !important;
+  background: linear-gradient(145deg, rgba(20, 28, 24, 0.95), rgba(12, 17, 14, 0.98)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 24px !important;
+  padding: 36px 40px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+  flex-wrap: wrap !important;
+}
+
+.callout-tag {
+  display: inline-block !important;
+  font: 700 11px 'DM Mono', monospace !important;
+  letter-spacing: 0.8px !important;
+  color: #ffd700 !important;
+  margin-bottom: 8px !important;
+}
+
+.callout-copy h3 {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+}
+
+.callout-copy p {
+  color: #9bb0a3 !important;
+  font-size: 15px !important;
+  max-width: 600px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .topic-hero {
+    grid-template-columns: 1fr !important;
+    padding: 26px 20px !important;
+    gap: 24px !important;
+  }
+  .topic-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .station-callout-banner {
+    padding: 24px 20px !important;
+  }
+  .callout-action,
+  .callout-action .button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+

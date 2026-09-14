@@ -13,8 +13,174 @@ const topicData = {
 	opencv: { kicker: 'INTERMEDIATE / COMPUTER VISION', title: 'OpenCV', summary: 'A practical toolkit for reading camera feeds, processing images, tracking objects and building vision counters.', learnings: ['Images, frames and colour spaces', 'Thresholding and image filters', 'Object tracking and contours', 'Python camera applications'], useTitle: 'Seeing and measuring the physical world', use: 'OpenCV supports inspection, retail analytics, sports analysis, robotics navigation and research prototypes.', project: 'Build a colour and shape sorter that guides objects into different trays.', image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85' },
 	tensorflow: { kicker: 'ADVANCED / MACHINE LEARNING', title: 'TensorFlow / YOLO', summary: 'Work with trained models for image classification and fast object detection in real-time projects.', learnings: ['Training data and model evaluation', 'Classification versus detection', 'Inference and confidence scores', 'Responsible use of vision models'], useTitle: 'Fast visual decisions', use: 'These tools are used for inspection, inventory, traffic analysis, agriculture and assistive technology.', project: 'Train a detector that identifies recyclable items and triggers a sorting mechanism.', image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=1200&q=85' },
 	ros2: { kicker: 'PROFESSIONAL / ROBOTICS', title: 'ROS 2 / Gazebo', summary: 'Learn the professional robotics ecosystem for reusable nodes, communication, simulation and robot control.', learnings: ['Nodes, topics, services and actions', 'Python and C++ robotics packages', 'Robot descriptions and sensors', 'Gazebo simulation and navigation'], useTitle: 'Robots at research and industry scale', use: 'ROS 2 is used to prototype autonomous vehicles, warehouse robots, research platforms and complex robot behaviors.', project: 'Simulate a mobile robot that publishes sensor data and navigates between waypoints.', image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85' },
-	cad: { kicker: 'PROFESSIONAL / FABRICATION', title: 'CAD + 3D Printing', summary: 'Turn a digital design into a physical part that can be assembled, tested and improved.', learnings: ['Sketches, dimensions and constraints', 'Chassis and enclosure design', 'PLA/PETG print planning', 'Iteration from prototype feedback'], useTitle: 'From digital model to manufactured part', use: 'CAD and additive manufacturing are used in product design, robotics, engineering, education and rapid manufacturing.', project: 'Design and print a custom robot chassis with mounts for sensors and a battery.', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85' }
+	cad: { kicker: 'PROFESSIONAL / FABRICATION', title: 'CAD + 3D Printing', summary: 'Turn a digital design into a physical part that can be assembled, tested and improved.', learnings: ['Sketches, dimensions and constraints', 'Chassis and enclosure design', 'PLA/PETG print planning', 'Iteration from prototype feedback'], useTitle: 'From digital model to manufactured part', use: 'CAD and additive manufacturing are used in product design, robotics, engineering, education and rapid manufacturing.', project: 'Design and print a custom robot chassis with mounts for sensors and a battery.', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85' },
+
+	// 6 Lab Station Equipment Definitions
+	'station-01': {
+		kicker: '01 / EMBEDDED COMPUTING',
+		title: 'Microcontroller & Firmware Station',
+		summary: 'High-reliability development rigs where students write C/C++ and MicroPython code, flash microcontrollers, and inspect serial data streams.',
+		equipmentList: [
+			{ logo: '▣', text: 'Arduino Uno, Mega & Nano Development Boards' },
+			{ logo: '⌁', text: 'ESP32 Dual-Core Wi-Fi & BLE Microcontrollers' },
+			{ logo: 'Py', text: 'Raspberry Pi 4 Model B (4GB) Linux Robotics Rigs' },
+			{ logo: '⌘', text: 'Hardware Logic Probes & 8-Channel Bus Analyzers' },
+			{ logo: '⌘', text: 'Dual-Monitor Coding Stations with VS Code & Git' }
+		],
+		learnings: [
+			'Arduino Uno, Mega & Nano low-level C/C++ programming',
+			'ESP32 Dual-Core Wi-Fi, Bluetooth and RTOS multitasking',
+			'Raspberry Pi 4 Model B Linux terminal, GPIO control & Python',
+			'Hardware Logic Probes for inspecting I2C, SPI & UART signals',
+			'Dual-Monitor Coding Stations with PlatformIO and Git version control'
+		],
+		useTitle: 'Automotive, Medical & Industrial Firmware Engineering',
+		use: 'Deterministic embedded microcontrollers power critical aerospace fly-by-wire controls, automotive anti-lock braking (ABS) systems, and medical infusion pumps. Students master hardware interrupts, timer registers, clock prescalers, and real-time firmware debugging.',
+		project: 'Dual-Core ESP32 Telemetry Controller running FreeRTOS multi-threading with hardware logic probe verification.',
+		image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85'
+	},
+	'station-02': {
+		kicker: '02 / SENSORS & MECHATRONICS',
+		title: 'Sensor & Signal Processing Rig',
+		summary: 'Equipped with calibrated measurement devices to test ultrasonic sonar, time-of-flight LiDAR, infrared matrices, and motor driver current loads.',
+		equipmentList: [
+			{ logo: '◉', text: 'Ultrasonic & ToF Laser Distance Sensors' },
+			{ logo: '◈', text: '9-DOF IMU Accelerometer, Gyroscope & Magnetometer' },
+			{ logo: '↻', text: 'Servo Torque, Stepper & Back-EMF Testing Dynamometers' },
+			{ logo: '⌬', text: 'Regulated Variable 0–30V / 5A DC Bench Power Supplies' },
+			{ logo: '⌬', text: 'Digital Multimeters, Shunt Ammeters & Calibration Probes' }
+		],
+		learnings: [
+			'Ultrasonic & Time-of-Flight (ToF) laser distance calibration and speed-of-sound math',
+			'9-DOF IMU Accelerometer & Gyroscope spatial orientation filtering (Madgwick / Kalman)',
+			'Servo Torque, Stepper Back-EMF and motor driver H-bridge current profiling',
+			'Regulated Variable DC Power Supplies with overcurrent and short-circuit protection',
+			'True-RMS Digital Multimeters, signal conditioning and analog filtering'
+		],
+		useTitle: 'Precision Robotics Kinematics & Mechatronics',
+		use: 'Intelligent robots rely on noise-free sensor feedback to maintain balance and avoid collisions. Industrial automated guided vehicles and drone flight controllers use sensor signal processing to eliminate electrical noise and calculate millisecond motion vectors.',
+		project: 'High-Precision Closed-Loop Dynamometer measuring real-time motor torque and back-EMF spikes under varying mechanical loads.',
+		image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85'
+	},
+	'station-03': {
+		kicker: '03 / VISION & SPATIAL AI',
+		title: 'Edge AI & Computer Vision Neural Rig',
+		summary: 'Students connect wide-angle optical cameras to Python OpenCV environments, executing real-time object tracking, face recognition, and color sorting algorithms.',
+		equipmentList: [
+			{ logo: 'CV', text: 'Python 3.11 & OpenCV 4 Accelerated Vision Pipeline' },
+			{ logo: 'AI', text: 'Google Coral Edge TPU Coprocessor (4 TOPS ML Inference)' },
+			{ logo: '◉', text: 'High-FPS Wide-Angle Video Cameras with Low-Distortion Glass' },
+			{ logo: 'AI', text: 'Custom Image Dataset Annotation, Augmentation & Training Rig' },
+			{ logo: '✦', text: 'Gesture Recognition Arenas & Spatial Coordinate Tracking' }
+		],
+		learnings: [
+			'Python 3.11 & OpenCV 4 real-time frame manipulation and HSV color spaces',
+			'Google Coral Edge TPU Coprocessor executing quantized TensorFlow Lite models',
+			'High-FPS Wide-Angle Low-Distortion Cameras for sub-millimeter optical inspection',
+			'Custom Dataset Annotation, data augmentation and transfer learning models',
+			'Gesture Recognition Arenas detecting hand poses and multi-object bounding boxes'
+		],
+		useTitle: 'Autonomous Navigation, Biometrics & Quality Inspection',
+		use: 'High-speed assembly lines, automated fulfillment centers, and autonomous vehicles rely on edge AI vision systems to detect microscopic defects at 120 FPS, verify barcode serialization, and identify pedestrians in adverse weather conditions.',
+		project: 'Edge TPU Neural Conveyor Sorter identifying multi-class objects and triggering microsecond servo diversion.',
+		image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=1400&q=85'
+	},
+	'station-04': {
+		kicker: '04 / IOT & WIRELESS MESH',
+		title: 'IoT Telemetry & Wireless Cloud Hub',
+		summary: 'Simulating real-world connected factories and smart homes. Students deploy local MQTT brokers, Wi-Fi mesh networks, and live web dashboards.',
+		equipmentList: [
+			{ logo: '⌁', text: 'Local & Cloud MQTT Brokers with TLS Encryption' },
+			{ logo: '☁', text: 'Real-Time Live Web Dashboards with WebSockets & Gauges' },
+			{ logo: '⌁', text: 'ESP-NOW Zero-Lag Peer-to-Peer Wireless Mesh Links' },
+			{ logo: '◉', text: 'Capacitive Environmental, Soil & Barometric Sensor Clusters' },
+			{ logo: '⌬', text: 'Optocoupled Solid-State Relays with 240V AC Isolation' }
+		],
+		learnings: [
+			'Local & Cloud MQTT Brokers with Mosquitto, publish/subscribe topics and QoS levels',
+			'Real-Time Live Web Dashboards updating gauges via WebSockets in milliseconds',
+			'ESP-NOW Zero-Lag Mesh Links transmitting data packet arrays without Wi-Fi router dependency',
+			'Capacitive Soil, Barometric BMP280, and Atmospheric sensor telemetry calibration',
+			'Optocoupled Solid-State Relay control with opto-isolation for safe mains switching'
+		],
+		useTitle: 'Industrial SCADA, Smart Agriculture & Smart Infrastructure',
+		use: 'From wind turbines in remote deserts to municipal smart water management, industrial IoT networks aggregate thousands of field sensor readings across encrypted wireless mesh networks, executing automated fail-safe overrides and predictive maintenance.',
+		project: 'Resilient Multi-Node Wireless Telemetry Mesh streaming environmental metrics to an encrypted live operations dashboard.',
+		image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1400&q=85'
+	},
+	'station-05': {
+		kicker: '05 / MECHANICAL FABRICATION',
+		title: 'CAD Mechanical Engineering & 3D Print Farm',
+		summary: 'From parametric sketches to solid plastic prototypes. Students design mechanical joints, robot chassis, and gearboxes in CAD and print them with millimeter accuracy.',
+		equipmentList: [
+			{ logo: '3D', text: 'Creality Precision Direct-Drive 3D Printers' },
+			{ logo: '✦', text: 'Premium Engineering PLA, PETG & Carbon-Fiber Filaments' },
+			{ logo: '3D', text: 'Autodesk Fusion 360 Parametric CAD & Tinkercad Workstations' },
+			{ logo: '⚙', text: 'Digital Vernier Calipers (0.01mm) & Screw Pitch Gauges' },
+			{ logo: '3D', text: 'Mechanical Assembly Depot with Metric Fasteners, Bearings & Gears' }
+		],
+		learnings: [
+			'Creality Precision 3D Printers with heated beds, dual-gear extruders and mesh bed leveling',
+			'Premium PLA, PETG & Carbon-Fiber composites for high-strength mechanical components',
+			'Autodesk Fusion 360 parametric 3D sketches, constraints, extrusions and assemblies',
+			'Digital Vernier Calipers with 0.01mm resolution for reverse engineering parts',
+			'Mechanical Assembly Depot stocked with M2/M3/M4 fasteners, thrust bearings and gear sets'
+		],
+		useTitle: 'Rapid Prototyping & Aerospace Additive Manufacturing',
+		use: 'Robotics companies and aerospace pioneers use parametric CAD modeling and additive manufacturing to iterate structural brackets, bionic linkages, and lightweight motor mounts within hours rather than waiting weeks for traditional machine shops.',
+		project: 'Parametric 4-Bar Linkage Bionic Robot Gripper modeled in Fusion 360 and 3D printed with integrated ball-bearing pivots.',
+		image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1400&q=85'
+	},
+	'station-06': {
+		kicker: '06 / TESTING & ARENA RUNS',
+		title: 'Autonomous Arena & Testing Ground',
+		summary: 'The ultimate proving arena. Wheeled rovers, obstacle-avoiders, and AGV machines are stress-tested against real boundary conditions, slope angles, and lighting shifts.',
+		equipmentList: [
+			{ logo: '⚡', text: '50 Sq Ft Modular Obstacle Arena with Reconfigurable Walls' },
+			{ logo: '↻', text: 'Precision High-Contrast Reflective Optical Line Tracks' },
+			{ logo: '✦', text: 'Variable Surface Friction Mats (Rubber, Wood, Ramp Inclines)' },
+			{ logo: '🛡', text: 'Padded High-Density Foam Safety Perimeter Impact Rails' },
+			{ logo: '⏱', text: 'Overhead Optical Lap Traps & Laser Timing Gates' }
+		],
+		learnings: [
+			'50 Sq Ft Modular Obstacle Arena for stress-testing pathfinding algorithms',
+			'Precision High-Contrast Line Tracks for tuning PID controller proportional/derivative gains',
+			'Variable Surface Friction Mats testing wheel slippage, odometry drift and traction',
+			'Padded Safety Perimeter Rails allowing high-velocity testing without prototype damage',
+			'Overhead Optical Lap Traps & Laser Timing Gates for millisecond lap benchmarking'
+		],
+		useTitle: 'Autonomous Ground Vehicles (AGV/AMR) & Safety Proving',
+		use: 'Autonomous warehouse robots (like those at Amazon and DHL) and self-driving shuttles must prove strict safety compliance. Real-world physical test tracks validate wheel slippage, battery voltage drops, sudden lighting transitions, and emergency stopping distances.',
+		project: 'Dual-PID Autonomous Mobile Rover obstacle-slalom trial with precision lap-time benchmarking and zero perimeter collisions.',
+		image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=85'
+	}
 };
+
+// Map station aliases
+topicData['station1'] = topicData['station-01'];
+topicData['station-1'] = topicData['station-01'];
+topicData['embedded'] = topicData['station-01'];
+
+topicData['station2'] = topicData['station-02'];
+topicData['station-2'] = topicData['station-02'];
+topicData['sensors'] = topicData['station-02'];
+topicData['mechatronics'] = topicData['station-02'];
+
+topicData['station3'] = topicData['station-03'];
+topicData['station-3'] = topicData['station-03'];
+topicData['spatial-ai'] = topicData['station-03'];
+
+topicData['station4'] = topicData['station-04'];
+topicData['station-4'] = topicData['station-04'];
+topicData['mesh'] = topicData['station-04'];
+
+topicData['station5'] = topicData['station-05'];
+topicData['station-5'] = topicData['station-05'];
+topicData['fabrication'] = topicData['station-05'];
+
+topicData['station6'] = topicData['station-06'];
+topicData['station-6'] = topicData['station-06'];
+topicData['arena'] = topicData['station-06'];
 
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.nav nav');
@@ -62,21 +228,90 @@ if (definitionPanel) {
 }
 const topicPage = document.querySelector('.topic-page');
 if (topicPage) {
-	const slug = new URLSearchParams(window.location.search).get('topic') || 'robotics';
-	const topic = topicData[slug] || topicData.robotics;
-	document.title = `${topic.title} | RoboNex AI`;
-	topicPage.querySelector('#topic-kicker').textContent = topic.kicker;
-	topicPage.querySelector('#topic-title').textContent = topic.title;
-	topicPage.querySelector('#topic-summary').textContent = topic.summary;
+	const params = new URLSearchParams(window.location.search);
+	const rawSlug = params.get('station') || params.get('topic') || 'station-01';
+	const slug = rawSlug.toLowerCase().trim();
+	const isStation = Boolean(params.get('station')) || slug.includes('station');
+	const topic = topicData[slug] || topicData['station-01'] || topicData.robotics;
+
+	document.title = `${topic.title} | RoboNex AI Station Equipment`;
+	
+	const kickerEl = topicPage.querySelector('#topic-kicker');
+	if (kickerEl) kickerEl.textContent = isStation ? `LAB STATION ${topic.kicker}` : topic.kicker;
+
+	const titleEl = topicPage.querySelector('#topic-title');
+	if (titleEl) titleEl.textContent = topic.title;
+
+	const summaryEl = topicPage.querySelector('#topic-summary');
+	if (summaryEl) summaryEl.textContent = topic.summary;
+
+	const backLink = topicPage.querySelector('#topic-back-link') || topicPage.querySelector('.back-link');
+	if (backLink) {
+		if (isStation) {
+			backLink.href = 'lab.html';
+			backLink.textContent = '← Back to Lab Stations';
+		} else {
+			backLink.href = 'curriculum.html';
+			backLink.textContent = '← Back to Learning Tree';
+		}
+	}
+
 	const topicImage = topicPage.querySelector('#topic-image');
-	topicImage.src = topic.image;
-	topicImage.alt = `${topic.title} project in the RoboNex lab`;
-	const learningIcons = ['⌘', '◉', '⚙', '✦'];
-	topicPage.querySelector('#topic-learnings').innerHTML = topic.learnings.map((item, index) => `<li tabindex="0"><span class="learn-icon" title="Learning step">${learningIcons[index % learningIcons.length]}</span><span>${item}</span></li>`).join('');
-	topicPage.querySelector('#topic-use-title').textContent = topic.useTitle;
-	topicPage.querySelector('#topic-use').textContent = topic.use;
-	topicPage.querySelector('#topic-project').textContent = topic.project;
+	if (topicImage) {
+		topicImage.src = topic.image;
+		topicImage.alt = `${topic.title} in the RoboNex engineering lab`;
+	}
+
+	const imageBadge = topicPage.querySelector('#topic-image-badge') || topicPage.querySelector('.topic-image-label');
+	if (imageBadge) {
+		imageBadge.textContent = isStation ? 'STATION EQUIPMENT BENCH' : 'REAL-WORLD PROJECT';
+	}
+
+	const panel1Tag = topicPage.querySelector('#topic-panel-1-tag');
+	if (panel1Tag) {
+		panel1Tag.textContent = isStation ? 'STATION EQUIPMENT & SENSORS' : 'WHAT STUDENTS LEARN';
+	}
+
+	const panel1Title = topicPage.querySelector('#topic-panel-1-title');
+	if (panel1Title) {
+		panel1Title.textContent = isStation ? 'Precision hardware tools & testbenches in this rig.' : 'From idea to working prototype.';
+	}
+
+	const learningsList = topicPage.querySelector('#topic-learnings');
+	if (learningsList) {
+		if (topic.equipmentList && topic.equipmentList.length) {
+			learningsList.innerHTML = topic.equipmentList.map(item => `
+				<li tabindex="0">
+					<span class="learn-icon" title="Equipment tool">${item.logo}</span>
+					<span>${item.text}</span>
+				</li>
+			`).join('');
+		} else {
+			const learningIcons = ['⌘', '◉', '⚙', '✦'];
+			learningsList.innerHTML = topic.learnings.map((item, index) => `
+				<li tabindex="0">
+					<span class="learn-icon" title="Learning step">${learningIcons[index % learningIcons.length]}</span>
+					<span>${item}</span>
+				</li>
+			`).join('');
+		}
+	}
+
+	const useTitle = topicPage.querySelector('#topic-use-title');
+	if (useTitle) useTitle.textContent = topic.useTitle;
+
+	const useText = topicPage.querySelector('#topic-use');
+	if (useText) useText.textContent = topic.use;
+
+	const projectLabel = topicPage.querySelector('#topic-project-label');
+	if (projectLabel) {
+		projectLabel.textContent = isStation ? 'STATION CAPSTONE BUILD' : 'PROJECT BRIEF';
+	}
+
+	const projectText = topicPage.querySelector('#topic-project');
+	if (projectText) projectText.textContent = topic.project;
 }
+
 const allLearningTrees = document.querySelectorAll('.learning-tree');
 if (allLearningTrees.length) {
 	const exactLogos = {
@@ -549,6 +784,17 @@ if (projectModal) {
 		});
 	});
 }
+
+// Attach click handler for all 6 Lab Station cards in lab.html
+const labStationCards = document.querySelectorAll('.lab-tree .tree-card');
+labStationCards.forEach((card, idx) => {
+	card.style.cursor = 'pointer';
+	const stationSlug = card.id || `station-0${idx + 1}`;
+	card.addEventListener('click', (e) => {
+		if (e.target.closest('a')) return; // Let anchor tag do its default navigation
+		window.location.href = `topic.html?station=${stationSlug}`;
+	});
+});
 
 /* ==========================================================================
    GLOBAL CYBER-GLITTER & STARDUST SPARKLE ENGINE
