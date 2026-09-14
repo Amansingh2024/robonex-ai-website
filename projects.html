@@ -41,7 +41,75 @@
       <article><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85" alt="Smart factory prototype" /><div><i title="Prototype development">🏭</i><small>PROTOTYPING</small><h2>Industrial Automation Prototype</h2><p>Model a connected production cell with feedback loops.</p></div></article>
     </section>
   </main>
-  <footer class="wrap"><a class="brand" href="index.html"><span class="brand-mark">R</span>robonex<span>ai</span></a></footer>
+
+  <!-- Modern 3D Project Detail & Brief Lightbox Modal -->
+  <aside class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-project-title">
+    <div class="project-modal-card tilt-surface" data-tilt>
+      <button class="project-modal-close" id="modal-close-btn" aria-label="Close project modal">✕</button>
+      
+      <div class="modal-media-pane">
+        <img id="modal-img" src="" alt="Project large preview" />
+        <div class="modal-media-overlay">
+          <span class="modal-tag" id="modal-tag">● HARDWARE PROTOTYPE</span>
+          <span class="modal-spec-label">ROBONEX LAB SPECIFICATION</span>
+        </div>
+      </div>
+
+      <div class="modal-info-pane">
+        <div class="modal-category-badge" id="modal-category">ROBOTICS</div>
+        <h2 id="modal-project-title">Project Name</h2>
+        
+        <div class="modal-brief-section">
+          <h3>Project Brief</h3>
+          <p id="modal-brief">Detailed brief goes here...</p>
+        </div>
+
+        <div class="modal-specs-grid">
+          <div>
+            <h4>Hardware Components</h4>
+            <div class="modal-badges" id="modal-hardware"></div>
+          </div>
+          <div>
+            <h4>Software &amp; Logic</h4>
+            <div class="modal-badges" id="modal-software"></div>
+          </div>
+        </div>
+
+        <div class="modal-learning-note">
+          <strong>Key Engineering Superpower:</strong>
+          <span id="modal-learning">Learning concept...</span>
+        </div>
+
+        <div class="modal-actions">
+          <a class="button" href="home.html#contact">Build This in Our Lab <b>→</b></a>
+          <button class="button-outline" id="modal-dismiss-btn" type="button">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="wrap home-footer">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="home.html"><span class="brand-mark">R</span>robonex<span>ai</span></a>
+        <p class="footer-tagline">Empowering the next generation of robotics and AI innovators through physical engineering.</p>
+      </div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="projects.html">Projects</a>
+        <a href="videos.html">3D Robots</a>
+        <a href="lab.html">Our Lab</a>
+        <a href="tel:+917667617870">☎ 7667617870</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RoboNex AI Learning Lab. All rights reserved.</p>
+      <span class="footer-badge">HANDS-ON • REAL HARDWARE • INDUSTRY AI</span>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

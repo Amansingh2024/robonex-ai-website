@@ -408,8 +408,8 @@
             <h3>Autonomous Obstacle-Avoiding Rover</h3>
             <p>A dual-motor wheeled robot that dynamically scans surroundings with an ultrasonic sensor and chooses safe clearance paths.</p>
             <div class="invention-footer">
-              <span class="invention-author">By Aarav (Age 12)</span>
-              <a class="invention-link" href="projects.html">Explore build <i>↗</i></a>
+              <span class="invention-author">● WORKING LAB PROTOTYPE</span>
+              <a class="invention-link" href="projects.html">View project brief <i>↗</i></a>
             </div>
           </div>
         </article>
@@ -425,8 +425,8 @@
             <h3>Vision-Guided Sorting Robot Arm</h3>
             <p>Uses a camera to detect object colors and geometries, calculating inverse kinematics to pick and deposit items into target bins.</p>
             <div class="invention-footer">
-              <span class="invention-author">By Priya (Age 14)</span>
-              <a class="invention-link" href="projects.html">Explore build <i>↗</i></a>
+              <span class="invention-author">● WORKING LAB PROTOTYPE</span>
+              <a class="invention-link" href="projects.html">View project brief <i>↗</i></a>
             </div>
           </div>
         </article>
@@ -442,8 +442,8 @@
             <h3>Smart IoT Soil &amp; Weather Station</h3>
             <p>Monitors soil moisture, temperature, and ambient humidity, pushing real-time alerts and trigger commands to a web dashboard.</p>
             <div class="invention-footer">
-              <span class="invention-author">By Rohan (Age 11)</span>
-              <a class="invention-link" href="projects.html">Explore build <i>↗</i></a>
+              <span class="invention-author">● WORKING LAB PROTOTYPE</span>
+              <a class="invention-link" href="projects.html">View project brief <i>↗</i></a>
             </div>
           </div>
         </article>
@@ -541,6 +541,52 @@
       <span class="footer-badge">HANDS-ON • REAL HARDWARE • INDUSTRY AI</span>
     </div>
   </footer>
+
+  <!-- Modern 3D Project Detail & Brief Lightbox Modal -->
+  <aside class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-project-title">
+    <div class="project-modal-card tilt-surface" data-tilt>
+      <button class="project-modal-close" id="modal-close-btn" aria-label="Close project modal">✕</button>
+      
+      <div class="modal-media-pane">
+        <img id="modal-img" src="" alt="Project large preview" />
+        <div class="modal-media-overlay">
+          <span class="modal-tag" id="modal-tag">● HARDWARE PROTOTYPE</span>
+          <span class="modal-spec-label">ROBONEX LAB SPECIFICATION</span>
+        </div>
+      </div>
+
+      <div class="modal-info-pane">
+        <div class="modal-category-badge" id="modal-category">ROBOTICS</div>
+        <h2 id="modal-project-title">Project Name</h2>
+        
+        <div class="modal-brief-section">
+          <h3>Project Brief</h3>
+          <p id="modal-brief">Detailed brief goes here...</p>
+        </div>
+
+        <div class="modal-specs-grid">
+          <div>
+            <h4>Hardware Components</h4>
+            <div class="modal-badges" id="modal-hardware"></div>
+          </div>
+          <div>
+            <h4>Software &amp; Logic</h4>
+            <div class="modal-badges" id="modal-software"></div>
+          </div>
+        </div>
+
+        <div class="modal-learning-note">
+          <strong>Key Engineering Superpower:</strong>
+          <span id="modal-learning">Learning concept...</span>
+        </div>
+
+        <div class="modal-actions">
+          <a class="button" href="home.html#contact">Build This in Our Lab <b>→</b></a>
+          <button class="button-outline" id="modal-dismiss-btn" type="button">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <div class="toast" role="status">Thanks! Your query is ready for our learning team. ✦</div>
   <script src="script.js"></script>

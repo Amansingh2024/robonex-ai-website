@@ -276,3 +276,276 @@ if (modernCards.length && 'IntersectionObserver' in window) {
 	});
 }
 
+
+// ========================================================
+// 3D PROJECT LIGHTBOX MODAL WITH BRIEF & SPECIFICATIONS
+// ========================================================
+const projectDetails = {
+	'ai vision counter': {
+		category: 'AI & COMPUTER VISION',
+		title: 'AI Vision Counter',
+		tag: '60 FPS REAL-TIME TRACKING',
+		image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A real-time optical recognition station that counts objects as they pass through a defined camera region of interest. Uses background subtraction, contour detection, and centroid tracking to prevent duplicate counts and log analytics.',
+		hardware: ['High-FPS USB Camera', 'Raspberry Pi 4 (4GB)', 'OLED Status Display', 'Buzzer Alert Trigger'],
+		software: ['Python 3.11', 'OpenCV 4.8', 'NumPy', 'Centroid Tracking Algorithm'],
+		learning: 'Students learn how digital frames are converted into pixel matrices, thresholded, and filtered through spatial contour geometry algorithms.'
+	},
+	'smart distance meter': {
+		category: 'SENSORS & MEASUREMENT',
+		title: 'Smart Distance Meter',
+		tag: 'MILLIMETER ACCURACY',
+		image: 'https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A handheld ultrasonic measurement gauge that pulses high-frequency 40kHz sound waves, measures echo return duration, calculates speed-of-sound compensation based on ambient temperature, and outputs live metric distance on an OLED display.',
+		hardware: ['HC-SR04 Ultrasonic Sensor', 'Arduino Nano Controller', '0.96 inch I2C OLED Display', 'Piezo Buzzer & Pushbutton'],
+		software: ['Arduino C++', 'Wire & Adafruit SSD1306 Libraries', 'Echo Time-of-Flight Physics Calculations'],
+		learning: 'Students master digital timing interrupts, speed-of-sound physics, and I2C serial display communication.'
+	},
+	'smart traffic light': {
+		category: 'AUTOMATION & EMBEDDED SYSTEMS',
+		title: 'Smart Traffic Light System',
+		tag: 'DYNAMIC TIMING & SENSING',
+		image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=1200&q=85',
+		brief: 'An intelligent intersection controller equipped with infrared vehicle presence sensors and a pedestrian request button. The system dynamically lengthens green lights when traffic congestion is sensed and provides pedestrian crossing windows.',
+		hardware: ['Infrared Break-Beam Sensors', 'Arduino Uno Microcontroller', 'Red/Yellow/Green High-Power LEDs', 'Crosswalk Pushbutton'],
+		software: ['Arduino C++', 'Finite State Machine (FSM) Architecture', 'Non-blocking millis() Timing'],
+		learning: 'Students learn state machine design patterns, debouncing pushbutton signals, and managing asynchronous time without using blocking delay() functions.'
+	},
+	'obstacle avoiding robot': {
+		category: 'AUTONOMOUS ROBOTICS',
+		title: 'Autonomous Obstacle-Avoiding Rover',
+		tag: 'REAL-TIME COLLISION AVOIDANCE',
+		image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A dual-motor differential drive wheeled rover with a panning ultrasonic sonar mounted on a micro-servo. When an obstacle is detected closer than 25cm, the rover halts, pans left and right to compare clearances, and steers toward the widest clear path.',
+		hardware: ['HC-SR04 Ultrasonic Sonar', 'SG90 Micro Servo', 'L298N Dual H-Bridge Driver', 'TT DC Gearmotors & Chassis', 'Li-ion 7.4V Battery Pack'],
+		software: ['Arduino C++', 'Servo Control Library', 'Differential Drive Steering Math'],
+		learning: 'Students master PWM motor speed modulation, H-bridge directional polarity, and reactive spatial navigation loops.'
+	},
+	'autonomous obstacle-avoiding rover': {
+		category: 'AUTONOMOUS ROBOTICS',
+		title: 'Autonomous Obstacle-Avoiding Rover',
+		tag: 'REAL-TIME COLLISION AVOIDANCE',
+		image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A dual-motor differential drive wheeled rover with a panning ultrasonic sonar mounted on a micro-servo. When an obstacle is detected closer than 25cm, the rover halts, pans left and right to compare clearances, and steers toward the widest clear path.',
+		hardware: ['HC-SR04 Ultrasonic Sonar', 'SG90 Micro Servo', 'L298N Dual H-Bridge Driver', 'TT DC Gearmotors & Chassis', 'Li-ion 7.4V Battery Pack'],
+		software: ['Arduino C++', 'Servo Control Library', 'Differential Drive Steering Math'],
+		learning: 'Students master PWM motor speed modulation, H-bridge directional polarity, and reactive spatial navigation loops.'
+	},
+	'smart home automation': {
+		category: 'IOT & WIRELESS SYSTEMS',
+		title: 'Smart Home Automation Hub',
+		tag: 'SECURE WEB & CLOUD CONTROL',
+		image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A connected home node that monitors room temperature, humidity, and light levels, hosting an embedded HTTP web server and syncing with a cloud dashboard to allow parents and students to toggle appliances and view energy metrics.',
+		hardware: ['ESP32 Wi-Fi / BLE Microcontroller', 'DHT11 Temp & Humidity Sensor', 'LDR Optical Sensor', '4-Channel Optocoupled Relay Module'],
+		software: ['C++ / ESP32 Core', 'Asynchronous Web Server', 'WebSockets / REST API'],
+		learning: 'Students understand network protocols (IP addressing, HTTP GET/POST requests, WebSockets) and electrical relay switching safety.'
+	},
+	'robotic arm': {
+		category: 'MECHANICAL DESIGN & KINEMATICS',
+		title: 'Vision-Guided Robotic Arm',
+		tag: '4-DOF ARTICULATED INVERSE KINEMATICS',
+		image: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A 4-axis articulated robotic arm with base rotation, shoulder, elbow, and a mechanical gripper end-effector. Controlled via potentiometers or an automated inverse kinematics routine that translates target X-Y-Z coordinates into joint servo angles.',
+		hardware: ['4x MG996R Metal-Gear Servos', 'PCA9685 16-Channel PWM Servo Driver', 'Laser-Cut Acrylic / 3D-Printed Joint Brackets', 'Dual-Axis Joystick'],
+		software: ['Arduino C++ / Python', 'Inverse Kinematics Trigonometric Solvers', 'PCA9685 I2C Driver'],
+		learning: 'Students explore spatial geometry, trigonometric joint angles, torque requirements, and mechanical gear reduction.'
+	},
+	'vision-guided sorting robot arm': {
+		category: 'MECHANICAL DESIGN & KINEMATICS',
+		title: 'Vision-Guided Sorting Robot Arm',
+		tag: '4-DOF ARTICULATED INVERSE KINEMATICS',
+		image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85',
+		brief: 'Uses an overhead camera to detect object colors and geometries, calculating inverse kinematics to pick and deposit items into target classification trays.',
+		hardware: ['Raspberry Pi 4', '4x Metal-Gear Servos', 'PCA9685 PWM Driver', 'Optical Video Camera'],
+		software: ['Python 3', 'OpenCV Vision', 'Trigonometric Inverse Kinematics'],
+		learning: 'Students connect digital camera video coordinates with physical servo angles in real time.'
+	},
+	'iot smart agriculture': {
+		category: 'SMART AGRICULTURE & IOT',
+		title: 'IoT Smart Soil & Agriculture Node',
+		tag: 'AUTOMATED IRRIGATION & TELEMETRY',
+		image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
+		brief: 'An outdoor environmental station measuring soil moisture, sunlight, and air temperature. When soil moisture drops below a threshold, the system triggers a 5V submersible water pump and posts telemetry data to a remote MQTT server.',
+		hardware: ['Capacitive Soil Moisture Probe', 'ESP32 Node', '5V Submersible Mini Water Pump', '5V Relay & Silicon Tubing'],
+		software: ['MicroPython / Arduino C++', 'MQTT Protocol', 'ThingSpeak / Adafruit IO Cloud'],
+		learning: 'Students learn analog sensor calibration, threshold trigger hysteresis, and telemetry publication to cloud IoT databases.'
+	},
+	'smart iot soil & weather station': {
+		category: 'SMART AGRICULTURE & IOT',
+		title: 'Smart IoT Soil & Weather Station',
+		tag: 'AUTOMATED IRRIGATION & TELEMETRY',
+		image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',
+		brief: 'Monitors soil moisture, temperature, and ambient humidity, pushing real-time alerts and trigger commands to a web dashboard with remote relay control.',
+		hardware: ['ESP32 Dual-Core', 'Capacitive Moisture Sensor', 'DHT11 Temp/Humidity', 'OLED Display'],
+		software: ['Arduino C++', 'MQTT Protocol', 'Web Dashboard'],
+		learning: 'Students learn cloud sensor streaming, threshold logic, and low-latency wireless communication.'
+	},
+	'remote control car': {
+		category: 'WIRELESS ROBOTICS',
+		title: 'ESP32 Wi-Fi & Bluetooth Rover',
+		tag: 'ZERO-LAG AP STREAMING',
+		image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A mobile rover that broadcasts its own Wi-Fi Access Point. Any smartphone or laptop can connect to the rover web page to steer using touch virtual joysticks, toggle headlight LEDs, and trigger sound honks in real time.',
+		hardware: ['ESP32 NodeMCU Controller', 'L9110S / L298N Dual Motor Driver', '4WD Acrylic Rover Chassis', 'Rechargeable 18650 Battery Shield'],
+		software: ['ESP32 WebSockets', 'HTML5 Touch Joystick Canvas', 'PWM Directional Steering'],
+		learning: 'Students understand Access Point vs Station modes, Wi-Fi latency optimization, and full-duplex WebSocket packets.'
+	},
+	'automatic object sorter': {
+		category: 'INDUSTRIAL AUTOMATION',
+		title: 'Automatic Optical Object Sorter',
+		tag: 'CONVEYOR COLOR DISCRIMINATION',
+		image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A miniature factory automation conveyor. Items move past a TCS3200 color sensor. The system analyzes RGB frequency values, identifies the object color, and fires a fast servo gate to divert items into specific sorting bins.',
+		hardware: ['TCS3200 Color Sensor Module', 'Mini DC Conveyor Belt', 'Micro Servo Diverter Gate', 'Arduino Uno', 'Infrared Part-Detection Sensor'],
+		software: ['Arduino C++', 'Color Space Frequency Mapping', 'Conveyor Index Timing'],
+		learning: 'Students discover industrial SCADA concepts, optical sensor calibration, and closed-loop sorting logic.'
+	},
+	'face recognition system': {
+		category: 'AI SECURITY & PERCEPTION',
+		title: 'AI Face Recognition & Security Hub',
+		tag: 'NEURAL FACE EMBEDDINGS',
+		image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A smart door lock prototype. A camera feed detects faces using Haar cascades and compares 128-dimensional facial embeddings. Authorized faces trigger a servo door latch and display a personalized welcome message on an LCD.',
+		hardware: ['Raspberry Pi 4 with Camera Module', 'SG90 Servo Door Mechanism', '16x2 I2C LCD Display', 'Status Indicator LEDs'],
+		software: ['Python 3', 'OpenCV', 'Face_Recognition Library', 'dlib Deep Metric Learning'],
+		learning: 'Students understand feature vector extraction, Euclidean distance thresholds, and responsible biometric AI design.'
+	},
+	'drone technology': {
+		category: 'AERIAL ROBOTICS',
+		title: 'Autonomous Quadcopter Flight Rig',
+		tag: '6-AXIS FLIGHT GYRO STABILIZATION',
+		image: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?auto=format&fit=crop&w=1200&q=85',
+		brief: 'An educational drone testbench where students analyze brushless motor thrust, calibrate electronic speed controllers (ESCs), and observe how 6-axis gyro/accelerometer data feeds into PID stabilization loops.',
+		hardware: ['Brushless DC Motors & ESCs', 'MPU6050 6-Axis IMU', 'Flight Controller Board', 'Carbon-Fiber Frame & Propellers'],
+		software: ['MultiWii / Cleanflight Firmware', 'PID Tuning GUI', 'PWM Throttle Control'],
+		learning: 'Students learn aerodynamics, thrust-to-weight ratios, gyroscope drift filtering, and quadcopter pitch/roll/yaw physics.'
+	},
+	'iot weather station': {
+		category: 'ENVIRONMENTAL SCIENCE & IOT',
+		title: 'IoT Meteorological Weather Station',
+		tag: 'BAROMETRIC PRESSURE & CLOUD SYNC',
+		image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A micro-weather station that records barometric atmospheric pressure, altitude estimation, ambient temperature, humidity, and rain precipitation, updating a public cloud dashboard every 60 seconds.',
+		hardware: ['BMP280 Barometric Pressure Sensor', 'DHT22 Precision Humidity Sensor', 'Raindrop Detection Board', 'ESP32 Wi-Fi Controller'],
+		software: ['Arduino C++', 'HTTP POST Telemetry', 'ThingSpeak Cloud Charts'],
+		learning: 'Students understand barometric pressure forecasting, analog sensor calibration, and power-saving deep sleep modes.'
+	},
+	'autonomous navigation robot': {
+		category: 'ADVANCED ROBOTICS & SLAM',
+		title: 'Autonomous Pathfinding Rover',
+		tag: 'OPTICAL ENCODER ODOMETRY',
+		image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85',
+		brief: 'An AGV rover that tracks its own X-Y coordinates using wheel encoders and an optical ground sensor. Given a target destination coordinate, it executes waypoint navigation while steering around unexpected obstacles.',
+		hardware: ['Dual Optical Quadrature Encoders', 'Arduino Mega 2560', 'L298N Motor Driver', 'Triple Infrared Sensor Array'],
+		software: ['C++ Odometry Math', 'Dead-Reckoning Algorithm', 'Waypoint Steering Vector Calculation'],
+		learning: 'Students explore robotics math, wheel tick calculations, cumulative odometry drift, and vector steering.'
+	},
+	'industrial automation prototype': {
+		category: 'INDUSTRIAL SCADA & CONVEYORS',
+		title: 'Smart Factory Automation Cell',
+		tag: 'FAIL-SAFE INDUSTRIAL LOGIC',
+		image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
+		brief: 'A scaled industrial manufacturing cell simulating an automated bottling or assembly line. Features optical part verification, an emergency stop safety latch, and an automated rejection arm for defective parts.',
+		hardware: ['DC Conveyor Drive', 'Infrared Gate Sensors', 'Solenoid / Servo Rejecter', 'Emergency Stop E-Stop Mushroom Button', 'Tower Warning Lamp'],
+		software: ['State Machine Logic', 'Hardware Interlock Safety System', 'Cycle-Time Performance Logger'],
+		learning: 'Students discover industrial automation standards, safety interlocking, emergency stop hardware protocols, and throughput optimization.'
+	}
+};
+
+const projectModal = document.getElementById('project-modal');
+if (projectModal) {
+	const modalImg = document.getElementById('modal-img');
+	const modalTag = document.getElementById('modal-tag');
+	const modalCategory = document.getElementById('modal-category');
+	const modalTitle = document.getElementById('modal-project-title');
+	const modalBrief = document.getElementById('modal-brief');
+	const modalHardware = document.getElementById('modal-hardware');
+	const modalSoftware = document.getElementById('modal-software');
+	const modalLearning = document.getElementById('modal-learning');
+	const closeBtn = document.getElementById('modal-close-btn');
+	const dismissBtn = document.getElementById('modal-dismiss-btn');
+
+	const openProjectModal = (key, fallbackImg, fallbackTitle, fallbackDesc) => {
+		const normKey = key.toLowerCase().trim();
+		let data = projectDetails[normKey];
+		if (!data) {
+			for (const [k, v] of Object.entries(projectDetails)) {
+				if (normKey.includes(k) || k.includes(normKey)) {
+					data = v;
+					break;
+				}
+			}
+		}
+
+		if (data) {
+			modalImg.src = data.image;
+			modalImg.alt = data.title;
+			modalTag.textContent = `● ${data.tag}`;
+			modalCategory.textContent = data.category;
+			modalTitle.textContent = data.title;
+			modalBrief.textContent = data.brief;
+			modalLearning.textContent = data.learning;
+
+			modalHardware.innerHTML = data.hardware.map(hw => `<span class="tech-badge"><b class="tech-badge-logo">⚙</b>${hw}</span>`).join('');
+			modalSoftware.innerHTML = data.software.map(sw => `<span class="tech-badge"><b class="tech-badge-logo">Py</b>${sw}</span>`).join('');
+		} else {
+			modalImg.src = fallbackImg || '';
+			modalImg.alt = fallbackTitle || 'Project Preview';
+			modalTag.textContent = '● HARDWARE PROTOTYPE';
+			modalCategory.textContent = 'ROBOTICS & AI';
+			modalTitle.textContent = fallbackTitle || 'Lab Project';
+			modalBrief.textContent = fallbackDesc || 'Practical AI and robotics prototype built in our learning lab.';
+			modalLearning.textContent = 'Hands-on engineering problem solving using real microcontrollers and code.';
+			modalHardware.innerHTML = '<span class="tech-badge"><b class="tech-badge-logo">▣</b>Microcontroller</span><span class="tech-badge"><b class="tech-badge-logo">◉</b>Sensors</span>';
+			modalSoftware.innerHTML = '<span class="tech-badge"><b class="tech-badge-logo">Py</b>Python / C++</span>';
+		}
+
+		projectModal.classList.add('is-open');
+		projectModal.setAttribute('aria-hidden', 'false');
+		document.body.style.overflow = 'hidden';
+	};
+
+	const closeProjectModal = () => {
+		projectModal.classList.remove('is-open');
+		projectModal.setAttribute('aria-hidden', 'true');
+		document.body.style.overflow = '';
+	};
+
+	if (closeBtn) closeBtn.addEventListener('click', closeProjectModal);
+	if (dismissBtn) dismissBtn.addEventListener('click', closeProjectModal);
+
+	projectModal.addEventListener('click', (e) => {
+		if (e.target === projectModal) closeProjectModal();
+	});
+
+	window.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
+			closeProjectModal();
+		}
+	});
+
+	// Attach click handlers to all project cards in projects.html
+	const projectArticles = document.querySelectorAll('.all-projects article');
+	projectArticles.forEach(article => {
+		article.style.cursor = 'pointer';
+		article.addEventListener('click', (e) => {
+			const title = article.querySelector('h2')?.textContent.trim() || '';
+			const img = article.querySelector('img')?.src || '';
+			const desc = article.querySelector('p')?.textContent.trim() || '';
+			openProjectModal(title, img, title, desc);
+		});
+	});
+
+	// Attach click handlers to invention cards in home.html
+	const inventionCards = document.querySelectorAll('.invention-card');
+	inventionCards.forEach(card => {
+		card.style.cursor = 'pointer';
+		card.addEventListener('click', (e) => {
+			const title = card.querySelector('h3')?.textContent.trim() || '';
+			const img = card.querySelector('img')?.src || '';
+			const desc = card.querySelector('p')?.textContent.trim() || '';
+			openProjectModal(title, img, title, desc);
+		});
+	});
+}

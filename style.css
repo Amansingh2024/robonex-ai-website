@@ -3000,3 +3000,272 @@ b.tool-logo {
     padding: 32px 20px !important;
   }
 }
+
+/* ==========================================================================
+   PROJECT LIGHTBOX MODAL WITH DEEP BRIEF & HARDWARE/SOFTWARE SPECIFICATIONS
+   ========================================================================== */
+
+.project-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  background: rgba(5, 10, 8, 0.88) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.project-modal.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.project-modal-card {
+  position: relative !important;
+  width: min(980px, 100%) !important;
+  max-height: 90vh !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1.15fr !important;
+  background: rgba(18, 26, 23, 0.98) !important;
+  border: 1.5px solid var(--dark-golden) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8), 0 0 50px rgba(200, 150, 30, 0.28) !important;
+  overflow: hidden !important;
+  transform: perspective(1000px) translateY(35px) scale(0.96) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.project-modal.is-open .project-modal-card {
+  transform: perspective(1000px) translateY(0) scale(1) !important;
+}
+
+.project-modal-close {
+  position: absolute !important;
+  top: 18px !important;
+  right: 20px !important;
+  z-index: 10 !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease !important;
+}
+
+.project-modal-close:hover {
+  transform: rotate(90deg) scale(1.1) !important;
+  background: var(--acid) !important;
+  border-color: var(--acid) !important;
+  color: #0d1210 !important;
+}
+
+/* Media Pane (Left Column) */
+.modal-media-pane {
+  position: relative !important;
+  background: #111816 !important;
+  overflow: hidden !important;
+  min-height: 420px !important;
+}
+
+.modal-media-pane img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  filter: saturate(0.95) contrast(1.1) !important;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.project-modal:hover .modal-media-pane img {
+  transform: scale(1.05) !important;
+}
+
+.modal-media-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(13,18,16,0.85) 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 22px !important;
+  pointer-events: none !important;
+}
+
+.modal-tag {
+  align-self: flex-start !important;
+  background: rgba(13, 18, 16, 0.88) !important;
+  border: 1px solid var(--acid) !important;
+  color: var(--acid) !important;
+  font: 700 10.5px 'DM Mono', monospace !important;
+  letter-spacing: 1px !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 14px rgba(216, 255, 75, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.modal-spec-label {
+  font: 700 9.5px 'DM Mono', monospace !important;
+  letter-spacing: 1.5px !important;
+  color: var(--dark-golden) !important;
+}
+
+/* Info Pane (Right Column) */
+.modal-info-pane {
+  padding: 38px 36px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+  max-height: 90vh !important;
+}
+
+.modal-category-badge {
+  font: 700 11px 'DM Mono', monospace !important;
+  letter-spacing: 1.5px !important;
+  color: var(--dark-golden) !important;
+  margin-bottom: 8px !important;
+}
+
+.modal-info-pane h2 {
+  font-size: clamp(26px, 3vw, 34px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+  color: #fff !important;
+  margin: 0 0 18px !important;
+  line-height: 1.15 !important;
+}
+
+.modal-brief-section {
+  margin-bottom: 22px !important;
+}
+
+.modal-brief-section h3 {
+  font: 700 12px 'DM Mono', monospace !important;
+  letter-spacing: 1px !important;
+  color: var(--dark-golden) !important;
+  margin: 0 0 8px !important;
+  text-transform: uppercase !important;
+}
+
+.modal-brief-section p {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #c4cdc7 !important;
+  margin: 0 !important;
+}
+
+.modal-specs-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 18px !important;
+  margin-bottom: 22px !important;
+  padding: 18px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.modal-specs-grid h4 {
+  font: 700 11px 'DM Mono', monospace !important;
+  letter-spacing: 1px !important;
+  color: #9aa39d !important;
+  margin: 0 0 10px !important;
+  text-transform: uppercase !important;
+}
+
+.modal-badges {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+}
+
+.modal-learning-note {
+  background: rgba(200, 150, 30, 0.1) !important;
+  border-left: 3px solid var(--dark-golden) !important;
+  padding: 14px 18px !important;
+  border-radius: 0 12px 12px 0 !important;
+  margin-bottom: 28px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: #d4ded7 !important;
+}
+
+.modal-learning-note strong {
+  display: block !important;
+  color: var(--dark-golden) !important;
+  margin-bottom: 4px !important;
+}
+
+.modal-actions {
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.modal-actions .button {
+  background: var(--dark-golden) !important;
+  color: #0d1210 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 10px 24px rgba(200, 150, 30, 0.45) !important;
+}
+
+.modal-actions .button:hover {
+  background: var(--dark-golden-hover) !important;
+  box-shadow: 0 14px 30px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Card Click Hover Affordance in projects.html */
+.all-projects article {
+  cursor: pointer !important;
+}
+
+.all-projects article:hover h2 {
+  color: var(--dark-golden-hover) !important;
+  text-shadow: 0 0 14px var(--dark-golden-glow) !important;
+}
+
+/* Mobile Responsive Modal (< 760px) */
+@media (max-width: 760px) {
+  .project-modal {
+    padding: 12px !important;
+    align-items: flex-end !important;
+  }
+  .project-modal-card {
+    grid-template-columns: 1fr !important;
+    max-height: 88vh !important;
+    border-radius: 24px 24px 0 0 !important;
+  }
+  .modal-media-pane {
+    height: 190px !important;
+    min-height: 190px !important;
+  }
+  .modal-info-pane {
+    padding: 24px 20px !important;
+  }
+  .modal-specs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .modal-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .modal-actions .button,
+  .modal-actions button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
