@@ -549,3 +549,219 @@ if (projectModal) {
 		});
 	});
 }
+
+/* ==========================================================================
+   GLOBAL CYBER-GLITTER & STARDUST SPARKLE ENGINE
+   ========================================================================== */
+function initGlitterEngine() {
+	// Check if user prefers reduced motion
+	if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		return;
+	}
+
+	let canvas = document.getElementById('glitter-canvas');
+	if (!canvas) {
+		canvas = document.createElement('canvas');
+		canvas.id = 'glitter-canvas';
+		canvas.setAttribute('aria-hidden', 'true');
+		document.body.appendChild(canvas);
+	}
+
+	const ctx = canvas.getContext('2d');
+	if (!ctx) return;
+
+	let width = (canvas.width = window.innerWidth);
+	let height = (canvas.height = window.innerHeight);
+
+	const colors = [
+		'rgba(255, 215, 0, ',    // Dark Gold
+		'rgba(255, 238, 140, ',  // Bright Warm Gold
+		'rgba(0, 245, 255, ',    // Neon Cyber Cyan
+		'rgba(198, 255, 0, ',    // Acid Lime
+		'rgba(255, 255, 255, '   // Diamond Starlight
+	];
+
+	// Ambient floating glitter particles
+	const PARTICLE_COUNT = Math.min(75, Math.floor((width * height) / 16000));
+	const particles = [];
+	const cursorParticles = [];
+
+	class GlitterParticle {
+		constructor(isCursor = false, x = 0, y = 0) {
+			this.isCursor = isCursor;
+			this.reset(isCursor, x, y);
+		}
+
+		reset(isCursor = false, x = 0, y = 0) {
+			this.isCursor = isCursor;
+			this.x = isCursor ? x : Math.random() * width;
+			this.y = isCursor ? y : Math.random() * height;
+			this.size = isCursor ? Math.random() * 2.6 + 1.2 : Math.random() * 3.2 + 1.2;
+			this.colorPrefix = colors[Math.floor(Math.random() * colors.length)];
+			this.alpha = isCursor ? 1 : Math.random() * 0.7 + 0.2;
+			this.maxAlpha = Math.random() * 0.5 + 0.5;
+			this.phase = Math.random() * Math.PI * 2;
+			this.twinkleSpeed = Math.random() * 0.035 + 0.015;
+			this.vx = isCursor ? (Math.random() - 0.5) * 3.2 : (Math.random() - 0.5) * 0.35;
+			this.vy = isCursor ? (Math.random() - 0.5) * 3.2 : -(Math.random() * 0.45 + 0.15);
+			this.angle = Math.random() * Math.PI * 2;
+			this.angularSpeed = (Math.random() - 0.5) * 0.04;
+			this.shape = Math.random() > 0.4 ? 'star' : (Math.random() > 0.5 ? 'flare' : 'orb');
+			this.decay = isCursor ? Math.random() * 0.025 + 0.02 : 0;
+		}
+
+		update() {
+			if (this.isCursor) {
+				this.x += this.vx;
+				this.y += this.vy;
+				this.vx *= 0.94;
+				this.vy *= 0.94;
+				this.alpha -= this.decay;
+				this.angle += this.angularSpeed * 2;
+				return;
+			}
+
+			// Ambient drifting & sinusoidal twinkling
+			this.x += this.vx;
+			this.y += this.vy;
+			this.phase += this.twinkleSpeed;
+			this.alpha = (Math.sin(this.phase) * 0.5 + 0.5) * this.maxAlpha;
+			this.angle += this.angularSpeed;
+
+			// Wrap edges smoothly
+			if (this.y < -15) this.y = height + 15;
+			if (this.y > height + 15) this.y = -15;
+			if (this.x < -15) this.x = width + 15;
+			if (this.x > width + 15) this.x = -15;
+		}
+
+		draw(c) {
+			if (this.alpha <= 0.02) return;
+			c.save();
+			c.translate(this.x, this.y);
+			c.rotate(this.angle);
+
+			if (this.shape === 'star') {
+				// 4-pointed diamond star sparkle (✦)
+				const s = this.size;
+				const inner = s * 0.22;
+				c.beginPath();
+				c.moveTo(0, -s * 2.2);
+				c.quadraticCurveTo(inner, -inner, s * 2.2, 0);
+				c.quadraticCurveTo(inner, inner, 0, s * 2.2);
+				c.quadraticCurveTo(-inner, inner, -s * 2.2, 0);
+				c.quadraticCurveTo(-inner, -inner, 0, -s * 2.2);
+				c.closePath();
+
+				c.fillStyle = this.colorPrefix + this.alpha + ')';
+				c.shadowColor = this.colorPrefix + '0.9)';
+				c.shadowBlur = s * 3.5;
+				c.fill();
+			} else if (this.shape === 'flare') {
+				// Optical cross sparkle (+)
+				const len = this.size * 2.4;
+				c.strokeStyle = this.colorPrefix + this.alpha + ')';
+				c.lineWidth = 1;
+				c.shadowColor = this.colorPrefix + '0.8)';
+				c.shadowBlur = this.size * 2;
+				c.beginPath();
+				c.moveTo(-len, 0);
+				c.lineTo(len, 0);
+				c.moveTo(0, -len);
+				c.lineTo(0, len);
+				c.stroke();
+			} else {
+				// Luminous stardust orb
+				c.beginPath();
+				c.arc(0, 0, this.size * 0.85, 0, Math.PI * 2);
+				c.fillStyle = this.colorPrefix + this.alpha + ')';
+				c.shadowColor = this.colorPrefix + '0.7)';
+				c.shadowBlur = this.size * 3;
+				c.fill();
+			}
+
+			c.restore();
+		}
+	}
+
+	// Initialize ambient pool
+	for (let i = 0; i < PARTICLE_COUNT; i++) {
+		particles.push(new GlitterParticle(false));
+	}
+
+	// Cursor interaction (gentle sparkle trail)
+	let lastSpawn = 0;
+	window.addEventListener('pointermove', (e) => {
+		const now = performance.now();
+		if (now - lastSpawn < 32) return; // 30fps throttle on pointer trail
+		lastSpawn = now;
+
+		if (cursorParticles.length < 35) {
+			cursorParticles.push(new GlitterParticle(true, e.clientX, e.clientY));
+			if (Math.random() > 0.4) {
+				cursorParticles.push(new GlitterParticle(true, e.clientX + (Math.random() - 0.5) * 12, e.clientY + (Math.random() - 0.5) * 12));
+			}
+		}
+	}, { passive: true });
+
+	// Click / tap burst (mini cyber fireworks)
+	window.addEventListener('pointerdown', (e) => {
+		const burstCount = 12;
+		for (let i = 0; i < burstCount; i++) {
+			if (cursorParticles.length < 50) {
+				cursorParticles.push(new GlitterParticle(true, e.clientX, e.clientY));
+			}
+		}
+	}, { passive: true });
+
+	// Resize handling
+	let resizeTimer;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(() => {
+			width = canvas.width = window.innerWidth;
+			height = canvas.height = window.innerHeight;
+		}, 120);
+	}, { passive: true });
+
+	// Animation loop
+	let isRunning = true;
+	document.addEventListener('visibilitychange', () => {
+		isRunning = !document.hidden;
+		if (isRunning) requestAnimationFrame(loop);
+	});
+
+	function loop() {
+		if (!isRunning) return;
+
+		ctx.clearRect(0, 0, width, height);
+
+		// Draw & update ambient stardust
+		for (let i = 0; i < particles.length; i++) {
+			particles[i].update();
+			particles[i].draw(ctx);
+		}
+
+		// Draw & update cursor sparkles
+		for (let j = cursorParticles.length - 1; j >= 0; j--) {
+			const cp = cursorParticles[j];
+			cp.update();
+			if (cp.alpha <= 0.02) {
+				cursorParticles.splice(j, 1);
+			} else {
+				cp.draw(ctx);
+			}
+		}
+
+		requestAnimationFrame(loop);
+	}
+
+	requestAnimationFrame(loop);
+}
+
+// Auto-run glitter engine when DOM is ready
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initGlitterEngine);
+} else {
+	initGlitterEngine();
+}
