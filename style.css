@@ -3654,4 +3654,79 @@ b.tool-logo {
   }
 }
 
+/* ==========================================================================
+   FEATURED ARDUINO VIDEO SPOTLIGHT (.home-video-spotlight)
+   ========================================================================== */
+.home-video-spotlight {
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+}
+
+.video-spotlight-card {
+  display: grid !important;
+  grid-template-columns: 1.25fr 1fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+  background: linear-gradient(145deg, rgba(16, 23, 19, 0.95), rgba(9, 13, 11, 0.98)) !important;
+  border: 1px solid rgba(255, 215, 0, 0.25) !important;
+  border-radius: 28px !important;
+  padding: 36px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+.spotlight-player {
+  position: relative !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  aspect-ratio: 16 / 9 !important;
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.spotlight-player iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
+}
+
+.spotlight-content h2 {
+  font-size: clamp(26px, 3vw, 36px) !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  margin: 12px 0 16px !important;
+  font-weight: 800 !important;
+}
+
+.spotlight-content p {
+  color: #9bb0a3 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 20px !important;
+}
+
+.spotlight-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 24px !important;
+}
+
+.spotlight-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+@media (max-width: 860px) {
+  .video-spotlight-card {
+    grid-template-columns: 1fr !important;
+    padding: 24px 18px !important;
+    gap: 22px !important;
+  }
+}
+
+
 

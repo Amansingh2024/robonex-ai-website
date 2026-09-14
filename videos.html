@@ -31,15 +31,175 @@
   <main class="wrap">
     <!-- Hero Section -->
     <section class="inner-hero video-hero">
-      <p class="eyebrow glitter-shimmer"><span></span> IOT SMART AUTOMATION &amp; 3D ROBOTICS IN ACTION</p>
-      <h1>Machines that move.<br /><em>Intelligence that acts.</em></h1>
-      <p>Explore cutting-edge IoT smart automation and robotics breakthroughs—from ESP32 cloud sensor telemetry and smart home automation to quadruped agility and humanoid locomotion. See the physical and connected principles our students build from scratch.</p>
+      <p class="eyebrow glitter-shimmer"><span></span> REAL ARDUINO ROBOTICS &amp; IOT INVENTIONS IN ACTION</p>
+      <h1>Machines that move.<br /><em>Code that brings them to life.</em></h1>
+      <p>Watch real Arduino and ESP32 hardware prototypes built from scratch—from two-wheeled self-balancing robots and articulated servo arms to autonomous fire-fighting rovers and IoT smart agriculture telemetry. Every project runs on real code and physical circuits built by young engineers.</p>
     </section>
 
-    <!-- 4 High-Tech Video Showcase Cards -->
+    <!-- 6 High-Tech Video Showcase Cards -->
     <section class="video-showcase-grid">
       
-      <!-- Video 1: IoT Smart Home & Automation -->
+      <!-- Video 1: Arduino Self-Balancing Robot -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/pbJbpHjC3v0?rel=0&modestbranding=1" 
+            title="Self Balancing Robot using Arduino &amp; MPU6050 Accelerometer Gyro" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● PID CONTROL / 200 HZ</span>
+            <span class="video-telemetry-badge">MPU6050 6-AXIS IMU</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">01 / ARDUINO DYNAMIC STABILIZATION</span>
+            <small class="video-duration">ARDUINO ROBOTICS</small>
+          </div>
+          <h2>Arduino Self-Balancing Inverted Pendulum Robot</h2>
+          <p class="video-description">
+            Watch a dual-wheel rover maintain upright balance automatically using real-time gyroscope and accelerometer readings from an MPU6050 sensor. The Arduino runs high-speed proportional-integral-derivative (PID) algorithms to counter gravity and tilt disturbances.
+          </p>
+          
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students calculate complementary angle filtering, tune PID proportional gains (Kp, Ki, Kd) in real-time serial monitors, and master PWM motor driver responsiveness.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>Arduino Uno</span>
+            <span class="tech-badge"><b class="tech-badge-logo">◈</b>MPU6050 6-DOF IMU</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↻</b>L298N Dual H-Bridge</span>
+            <span class="tech-badge"><b class="tech-badge-logo">⚡</b>Real-Time PID Loop</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 2: Arduino Servo Robotic Arm -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/ADJGxOrEZAM?rel=0&modestbranding=1" 
+            title="How to Make Servo Robotic Arm using Arduino" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● 4-AXIS SERVO PWM</span>
+            <span class="video-telemetry-badge">DUAL ANALOG JOYSTICKS</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">02 / ARDUINO MECHATRONICS &amp; SERVOS</span>
+            <small class="video-duration">PHYSICAL KINEMATICS</small>
+          </div>
+          <h2>Interactive 4-DOF Articulated Robotic Arm</h2>
+          <p class="video-description">
+            Constructed with high-torque micro-servos and custom mechanical brackets, this 4-degrees-of-freedom robotic arm executes precise pick-and-place trajectories controlled by dual analog potentiometers and joystick modules.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students map analog input voltages (0–1023) to angular servo degree limits (0–180°), program multi-servo pulse timing without blocking delays, and design balanced mechanical linkages.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>Arduino Controller</span>
+            <span class="tech-badge"><b class="tech-badge-logo">3D</b>4-DOF Acrylic Rig</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↻</b>Micro Servos (SG90/MG996R)</span>
+            <span class="tech-badge"><b class="tech-badge-logo">⌘</b>Analog Potentiometers</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 3: Arduino Fire Fighting Robot -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/jsvAL9ogFBw?rel=0&modestbranding=1" 
+            title="DIY Fire Fighting Robot using Arduino | Auto Fire Chaser and Extinguisher" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● TRIPLE IR FLAME SENSORS</span>
+            <span class="video-telemetry-badge">5V PUMP WATER CANNON</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">03 / ARDUINO AUTONOMOUS RESCUE</span>
+            <small class="video-duration">EMERGENCY ROBOTICS</small>
+          </div>
+          <h2>Autonomous Fire-Fighting &amp; Extinguisher Rover</h2>
+          <p class="video-description">
+            An intelligent emergency response rover equipped with a 3-channel infrared flame sensor array. The robot autonomously navigates toward detected heat sources, steers to center the flame, and triggers a 5V submersible water pump to extinguish it.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students wire optocoupled relays for DC pump switching, calibrate optical wavelength thresholds for fire detection, and implement multi-state emergency avoidance routines.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>Arduino Uno</span>
+            <span class="tech-badge"><b class="tech-badge-logo">◉</b>Triple Flame Array</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↔</b>Ultrasonic Obstacle Sonar</span>
+            <span class="tech-badge"><b class="tech-badge-logo">⚡</b>5V Submersible Pump</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 4: Arduino Line Follower Robot -->
+      <article class="video-card tilt-surface" data-tilt>
+        <div class="video-player-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/7KGJlU4-RWg?rel=0&modestbranding=1" 
+            title="Arduino Line Following Robot | DIY Smart Robot" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <div class="video-hud-overlay">
+            <span class="video-telemetry-badge">● HIGH-CONTRAST SENSING</span>
+            <span class="video-telemetry-badge">DIFFERENTIAL PWM DRIVE</span>
+          </div>
+        </div>
+
+        <div class="video-card-content">
+          <div class="video-header-row">
+            <span class="video-stage-tag">04 / ARDUINO OPTICAL NAVIGATION</span>
+            <small class="video-duration">AUTONOMOUS TRACKING</small>
+          </div>
+          <h2>High-Speed Line Tracking &amp; Navigation Rover</h2>
+          <p class="video-description">
+            Demonstrating precision autonomous ground tracking, this Arduino rover reads high-contrast black lines across reflective surfaces with a multi-channel infrared reflectance array, adjusting wheel PWM speeds instantly for sharp turns.
+          </p>
+
+          <div class="video-learning-insight">
+            <strong>What RoboNex Students Learn:</strong>
+            <span>Students build phototransistor comparator circuits, write proportional line-following logic in C++, and optimize differential motor steering for high-velocity stability.</span>
+          </div>
+
+          <div class="video-tech-stack">
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>Arduino Nano / Uno</span>
+            <span class="tech-badge"><b class="tech-badge-logo">◉</b>IR Reflectance Array</span>
+            <span class="tech-badge"><b class="tech-badge-logo">↻</b>Dual DC Gearmotors</span>
+            <span class="tech-badge"><b class="tech-badge-logo">✦</b>Differential Speed Math</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 5: IoT Smart Home & Automation -->
       <article class="video-card tilt-surface" data-tilt>
         <div class="video-player-wrapper">
           <iframe 
@@ -51,35 +211,35 @@
           </iframe>
           <div class="video-hud-overlay">
             <span class="video-telemetry-badge">● IOT MQTT PROTOCOL / LIVE</span>
-            <span class="video-telemetry-badge">ESP32 WI-FI MESH</span>
+            <span class="video-telemetry-badge">ESP32 &amp; ARDUINO MESH</span>
           </div>
         </div>
 
         <div class="video-card-content">
           <div class="video-header-row">
-            <span class="video-stage-tag">01 / IOT &amp; WIRELESS AUTOMATION</span>
-            <small class="video-duration">IOT SMART SYSTEM</small>
+            <span class="video-stage-tag">05 / ARDUINO &amp; ESP32 IOT AUTOMATION</span>
+            <small class="video-duration">CONNECTED EMBEDDED SYSTEM</small>
           </div>
           <h2>Smart IoT Home Automation &amp; Connected Node Network</h2>
           <p class="video-description">
-            Explore how microcontrollers communicate across Wi-Fi networks using lightweight MQTT publish/subscribe messaging. Learn how sensors send live temperature, motion, and power data to interactive web dashboards while triggering automated physical relays.
+            Explore how microcontrollers communicate across Wi-Fi networks using lightweight MQTT publish/subscribe messaging. Learn how sensors stream live telemetry to web dashboards while triggering automated physical relays safely.
           </p>
           
           <div class="video-learning-insight">
             <strong>What RoboNex Students Learn:</strong>
-            <span>Students wire ESP32 microcontrollers to Wi-Fi and Bluetooth mesh, configure local MQTT brokers, and design custom web dashboards to control lighting, motors, and appliances remotely.</span>
+            <span>Students wire microcontrollers to Wi-Fi mesh, configure local MQTT brokers, and design custom web dashboards to control lighting, motors, and appliances remotely.</span>
           </div>
 
           <div class="video-tech-stack">
             <span class="tech-badge"><b class="tech-badge-logo">⌁</b>MQTT Broker</span>
-            <span class="tech-badge"><b class="tech-badge-logo">▣</b>ESP32 Dual-Core</span>
+            <span class="tech-badge"><b class="tech-badge-logo">▣</b>ESP32 &amp; Arduino</span>
             <span class="tech-badge"><b class="tech-badge-logo">☁</b>Cloud Telemetry</span>
             <span class="tech-badge"><b class="tech-badge-logo">⌬</b>Optocoupled Relay</span>
           </div>
         </div>
       </article>
 
-      <!-- Video 2: Industrial IoT & Smart Agriculture -->
+      <!-- Video 6: Industrial IoT & Smart Agriculture -->
       <article class="video-card tilt-surface" data-tilt>
         <div class="video-player-wrapper">
           <iframe 
@@ -97,7 +257,7 @@
 
         <div class="video-card-content">
           <div class="video-header-row">
-            <span class="video-stage-tag">02 / INDUSTRIAL IOT &amp; SMART AGRICULTURE</span>
+            <span class="video-stage-tag">06 / ARDUINO INDUSTRIAL IOT &amp; AGRI-TECH</span>
             <small class="video-duration">IOT FIELD TELEMETRY</small>
           </div>
           <h2>Industrial IoT &amp; Smart Agriculture Environmental Telemetry</h2>
@@ -115,86 +275,6 @@
             <span class="tech-badge"><b class="tech-badge-logo">☁</b>Cloud Analytics</span>
             <span class="tech-badge"><b class="tech-badge-logo">⌁</b>Wi-Fi / GSM Mesh</span>
             <span class="tech-badge"><b class="tech-badge-logo">⚡</b>5V DC Water Pump</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Video 3: MIT Mini Cheetah -->
-      <article class="video-card tilt-surface" data-tilt>
-        <div class="video-player-wrapper">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/xNeZWP5Mx9s?rel=0&modestbranding=1" 
-            title="MIT Mini Cheetah Quadruped Robot Agility &amp; Backflips" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-          <div class="video-hud-overlay">
-            <span class="video-telemetry-badge">● GAIT FREQUENCY / 20 HZ</span>
-            <span class="video-telemetry-badge">TORQUE CONTROL / CAN BUS</span>
-          </div>
-        </div>
-
-        <div class="video-card-content">
-          <div class="video-header-row">
-            <span class="video-stage-tag">03 / BIO-INSPIRED QUADRUPED ROBOTICS</span>
-            <small class="video-duration">RESEARCH LAB BENCHMARK</small>
-          </div>
-          <h2>MIT Mini Cheetah: Bio-Inspired Quadruped Agility &amp; Flips</h2>
-          <p class="video-description">
-            See high-torque custom electric motors and low-inertia leg linkages perform 360-degree backflips, recover from sudden impacts, and adaptively traverse rough gravel and uneven steps at speeds exceeding 8 km/h.
-          </p>
-
-          <div class="video-learning-insight">
-            <strong>What RoboNex Students Learn:</strong>
-            <span>Students master mechanical linkage design, gear ratio optimization, and motor torque distribution in Level 06 Mechanical Engineering to build resilient robot chassis that survive real impacts.</span>
-          </div>
-
-          <div class="video-tech-stack">
-            <span class="tech-badge"><b class="tech-badge-logo">▣</b>CAN-Bus Controller</span>
-            <span class="tech-badge"><b class="tech-badge-logo">↻</b>Custom BLDC Motors</span>
-            <span class="tech-badge"><b class="tech-badge-logo">✦</b>Gait Trajectory Math</span>
-            <span class="tech-badge"><b class="tech-badge-logo">3D</b>Carbon &amp; Aluminum CAD</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Video 4: Precision 6-DOF Industrial Robotic Arm -->
-      <article class="video-card tilt-surface" data-tilt>
-        <div class="video-player-wrapper">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/4PaTWms9V5U?rel=0&modestbranding=1" 
-            title="High-Precision Industrial Robotic Arm Computer Vision Assembly" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-          <div class="video-hud-overlay">
-            <span class="video-telemetry-badge">● REPEATABILITY / ±0.02 MM</span>
-            <span class="video-telemetry-badge">ROS 2 / MOVEIT KINEMATICS</span>
-          </div>
-        </div>
-
-        <div class="video-card-content">
-          <div class="video-header-row">
-            <span class="video-stage-tag">04 / KINEMATICS &amp; INDUSTRIAL AUTOMATION</span>
-            <small class="video-duration">HIGH-PRECISION LAB WORK</small>
-          </div>
-          <h2>6-DOF Articulated Robotic Arm: Vision-Guided Micro-Assembly</h2>
-          <p class="video-description">
-            Demonstrating mathematical inverse kinematics and camera-over-gripper visual servoing. The 6-axis arm tracks random component placements on a conveyor, smoothly interpolates multi-axis joint angles, and executes high-speed placement.
-          </p>
-
-          <div class="video-learning-insight">
-            <strong>What RoboNex Students Learn:</strong>
-            <span>Students write forward and inverse kinematic solvers in Python, controlling multi-axis servo arms that calculate angles based on live camera video coordinates.</span>
-          </div>
-
-          <div class="video-tech-stack">
-            <span class="tech-badge"><b class="tech-badge-logo">3D</b>6-Axis Kinematics</span>
-            <span class="tech-badge"><b class="tech-badge-logo">CV</b>OpenCV Vision Feed</span>
-            <span class="tech-badge"><b class="tech-badge-logo">R2</b>ROS 2 Motion Planning</span>
-            <span class="tech-badge"><b class="tech-badge-logo">⌬</b>Electronic Pneumatic Gripper</span>
           </div>
         </div>
       </article>
